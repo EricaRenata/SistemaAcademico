@@ -1,0 +1,40 @@
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+.margin-top {
+  padding-top: 16px;
+}
+
+.modulos {
+  height: 134px;
+  cursor: pointer;
+  background-color: #EEE;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+}
+
+.modulos span {
+  font-size: 53px;
+  margin-top: 15px;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.modulos h4 {
+  padding-top: 5px;
+  font-weight: bold;
+}
+
+.caixa {
+  height: 150px !important;
+  width: 392px;
+  display: inline-block;
+}
+
+.margin-10 {
+  margin-top: 5px;
+}
