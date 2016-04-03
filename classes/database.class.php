@@ -22,8 +22,8 @@ class Database {
   private static $join_types = array('INNER', 'LEFT', 'RIGHT', 'FULL OUTER');
   private static $operators = array('=', '!=', '>', '>=', '<', '<=', '<>', '!<', '!>', 'IN', 'NOT IN', 'NULL', 'NOT NULL', 'BETWEEN', 'LIKE', 'ILIKE');
 
-  public function __construct($host, $user, $pass, $db) {
-    $this->mysql = new mysqli($host, $user, $pass, $db);
+  public function __construct() {
+    $this->mysql = new mysqli('127.0.0.1', 'root', '', 'SGA');
     if(mysqli_connect_errno()) {
       throw new Exception('Dados de conexão com o banco de dados incorretos');
     }
@@ -331,7 +331,7 @@ class Database {
       $this->offset,
       $this->having
     ));
-    $this->query = $this->mysql->query($query);
+    $this->query = $this->query($query);
     $this->num_rows = $this->query->num_rows;
     $this->last_query = $query;
     return $this;
@@ -357,10 +357,12 @@ class Database {
 
   public function result() {
     $data = array();
-    while($result = mysqli_fetch_object($this->query)) {
-      $data[] = $result;
+    if(!empty($this->query)) {
+      while($result = mysqli_fetch_object($this->query)) {
+        $data[] = $result;
+      }
+      $this->clearAttributes();
     }
-    $this->clearAttributes();
     return $data;
   }
 

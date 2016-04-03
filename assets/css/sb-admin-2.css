@@ -129,6 +129,14 @@ body {
         margin-top: 51px;
     }
 
+    .sidebar-right {
+        z-index: 1;
+        position: absolute;
+        width: 250px;
+        margin-top: 51px;
+        right: 0;
+    }
+
     .navbar-top-links .dropdown-messages,
     .navbar-top-links .dropdown-tasks,
     .navbar-top-links .dropdown-alerts {

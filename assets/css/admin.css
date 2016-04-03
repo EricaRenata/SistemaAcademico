@@ -38,3 +38,7 @@ a:hover, a:visited, a:link, a:active {
 .margin-10 {
   margin-top: 5px;
 }
+
+.status-aluno {
+  color: #000;
+}
