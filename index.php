@@ -1,4 +1,4 @@
-<?php 
+<?php  
   include 'classes/funcoes.class.php'; 
   include 'classes/noticia.class.php'; 
 ?>
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SGA - Sistema de Gestao Academica</title>
+    <title>SGA - Sistema de Gestao Acadêmica</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/carousel.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">

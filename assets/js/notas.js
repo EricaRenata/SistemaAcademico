@@ -2,16 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var notas = document.querySelectorAll('.notas');
   var resultado;
   for (var i = 0; i < notas.length; i++) {
+    verificaValor(notas[i]);
     notas[i].addEventListener('keyup', function(e) {
-      let nota1 = this.children[3].children[0];
-      let nota2 = this.children[4].children[0];
-      let status = this.children[5].children[1];
-      if(nota1.value.length <= 3 && nota2.value.length <= 3) {
-        valor_nota1 = (nota1.value == 'NaN' || nota1.value == '') ? 0 : nota1.value;
-        valor_nota2 = (nota2.value == 'NaN' || nota2.value == '') ? 0 : nota2.value;
-        resultado = parseFloat(valor_nota1) + parseFloat(valor_nota2);
-        setaStatusAluno(this.dataset.aluno, resultado, status);
-      }
+      verificaValor(this);
     });
     notas[i].addEventListener('keypress', function(e) {
       if (e.keyCode != 46 && e.keyCode > 31 && (e.keyCode < 48 || e.keyCode > 57)) {
@@ -21,6 +14,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+function verificaValor(elemento) {
+  let nota1 = elemento.children[3].children[0];
+  let nota2 = elemento.children[4].children[0];
+  let status = elemento.children[5].children[1];
+  if(nota1.value.length <= 3 && nota2.value.length <= 3) {
+    valor_nota1 = (nota1.value == 'NaN' || nota1.value == '') ? 0 : nota1.value;
+    valor_nota2 = (nota2.value == 'NaN' || nota2.value == '') ? 0 : nota2.value;
+    resultado = parseFloat(valor_nota1) + parseFloat(valor_nota2);
+    setaStatusAluno(elemento.dataset.aluno, resultado, status);
+  }
+}
+
 
 function setaStatusAluno(id, resultado, status) {
   var status_aluno = document.querySelector('label[data-id="'+id+'"]');

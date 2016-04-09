@@ -1,4 +1,3 @@
-
 <?php  
   include '../classes/funcoes.class.php';
   include '../classes/aluno.class.php'; 
@@ -33,14 +32,33 @@
     </div>
      <div class="col-sm-6 col-md-3">
       <a href='addNotas.php' class="thumbnail modulos">
-        <span class="glyphicon glyphicon-education"></span>
+        <span class="glyphicon glyphicon-list-alt"></span>
         <h4>Adicionar Notas</h4>
       </a>
   </div>
   <div class="col-sm-6 col-md-3">
     <a href='verNotas.php' class="thumbnail modulos">
-      <span class="glyphicon glyphicon-education"></span>
+      <span class="glyphicon glyphicon-list-alt"></span>
       <h4>Visualizar Notas</h4>
+    </a>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <a href='verNotas2.php' class="thumbnail modulos">
+      <span class="glyphicon glyphicon-list-alt"></span>
+      <h4>Visualizar Notas2</h4>
+    </a>
+  </div>
+
+  <div class="col-sm-6 col-md-3">
+    <a href='addHorario.php' class="thumbnail modulos">
+      <span class="glyphicon glyphicon-calendar"></span>
+      <h4>Adicionar Horário</h4>
+    </a>
+  </div>
+    <div class="col-sm-6 col-md-3">
+    <a href='verHorario.php' class="thumbnail modulos">
+      <span class="glyphicon glyphicon-calendar"></span>
+      <h4>Visualizar Horário</h4>
     </a>
   </div>
  <?php Funcoes::geraFooter(); ?>
