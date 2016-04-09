@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Abr-2016 às 22:48
+-- Generation Time: 09-Abr-2016 às 14:17
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -61,14 +61,16 @@ CREATE TABLE IF NOT EXISTS `cad_notas` (
   `status` tinyint(1) DEFAULT NULL,
   `cd_turma` bigint(50) NOT NULL,
 `cd_nota` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cad_notas`
 --
 
 INSERT INTO `cad_notas` (`cd_aluno`, `nota1`, `nota2`, `status`, `cd_turma`, `cd_nota`) VALUES
-(4, 3, 2, 0, 0, 6);
+(4, 3, 5, 1, 0, 6),
+(1, 5, 2, 1, 0, 7),
+(2, 3, 2, 0, 0, 8);
 
 -- --------------------------------------------------------
 
@@ -182,7 +184,7 @@ MODIFY `cd_aluno` bigint(45) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 -- AUTO_INCREMENT for table `cad_notas`
 --
 ALTER TABLE `cad_notas`
-MODIFY `cd_nota` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `cd_nota` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `cad_turma`
 --
