@@ -42,3 +42,16 @@ a:hover, a:visited, a:link, a:active {
 .status-aluno {
   color: #000;
 }
+
+.glyphicon {
+  cursor: pointer;
+}
+
+.presente {
+  font-size: 20px;
+}
+
+.presente:hover {
+  color: green;
+  font-size: 21px;
+}
