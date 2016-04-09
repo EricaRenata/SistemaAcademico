@@ -8,8 +8,7 @@ Class Notas extends Funcoes {
       if(is_array($valor) && !empty($valor['nota1']) &&  !empty($valor['nota2'])) {
         $verificanota = count($this->getNotas($valor['cd_aluno']));
         if($verificanota) {
-          $objetoSql->where('cd_aluno', $valor['cd_aluno'])->update('cad_notas', $valor);
-          unset($valor['cd_aluno']);
+          $objetoSql->query('update cad_notas set nota1 = '.$valor["nota1"].', nota2 = '.$valor["nota2"].', status = '.$valor["status"].' where cd_aluno = '.$valor["cd_aluno"].'');
         }else {
           $objetoSql1->insert('cad_notas', $valor);
         }
