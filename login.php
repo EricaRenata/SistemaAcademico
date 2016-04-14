@@ -1,7 +1,11 @@
 <?php
-  session_start(); 
-  include '/classes/funcoes.class.php';
-  include_once "/classes/login.class.php"; 
+  session_start();
+
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+
+  include 'classes/funcoes.class.php';
+  include_once 'classes/login.class.php';
 ?> 
 <!DOCTYPE html>
 <html>

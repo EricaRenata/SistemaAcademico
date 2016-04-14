@@ -51,7 +51,15 @@ a:hover, a:visited, a:link, a:active {
   font-size: 20px;
 }
 
-.presente:hover {
+.presente:hover:not(.glyphicon-ok) {
   color: green;
   font-size: 21px;
 }
+
+/*.glyphicon-ok {*/
+  /*cursor: not-allowed !important;*/
+/*}*/
+
+/*.glyphicon-ok:hover {*/
+  /*cursor: not-allowed !important;;*/
+/*}*/

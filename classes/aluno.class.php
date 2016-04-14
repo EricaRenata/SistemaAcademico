@@ -7,14 +7,9 @@ class Aluno extends Funcoes {
     $objetoSql->insert('cadaluno', $itens);
   }
 
-  public function getAlunos($cd_curso) {
+  public function getAlunos() {
     $objetoSql = new Database();
-    if(isset($cd_curso) && $cd_curso != '') {
-	    $result = $objetoSql->query('select * from cadaluno where cd_curso = '.$cd_curso.'')->result();
-	    return $result;
-    } else {
-    	$result = $objetoSql->query('select * from cadaluno')->result();
-	    return $result;
-    }
+    $result = $objetoSql->query('select * from cadaluno')->result();
+    return $result;
   }
 }

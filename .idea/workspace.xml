@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e33c3c9-d45c-40f1-9140-6c4694bb3ef6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/SistemaAcademico.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/aluno.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/database.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/frequencia.php" afterPath="$PROJECT_DIR$/admin/frequencia.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/admin.css" afterPath="$PROJECT_DIR$/assets/css/admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/frequencia.js" afterPath="$PROJECT_DIR$/assets/js/frequencia.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/aluno.class.php" afterPath="$PROJECT_DIR$/classes/aluno.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/database.class.php" afterPath="$PROJECT_DIR$/classes/database.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/frequencia.class.php" afterPath="$PROJECT_DIR$/classes/frequencia.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/funcoes.class.php" afterPath="$PROJECT_DIR$/classes/funcoes.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
     </list>
     <ignored path="SistemaAcademico.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,23 +32,24 @@
     <favorites_list name="SistemaAcademico" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="frequencia.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/frequencia.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aluno.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/aluno.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-4.296296">
+              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+              <folding>
+                <marker date="1460299776034" expanded="true" signature="405:540" placeholder="INSERT INTO frequencia... " />
+                <marker date="1460299776034" expanded="true" signature="711:752" placeholder="SELECT * FRO... frequencia" />
+                <marker date="1460299776034" expanded="true" signature="711:753" placeholder="SELECT * FRO... frequencia" />
+                <marker date="1460299776034" expanded="true" signature="711:765" placeholder="SELECT * FRO... frequencia" />
+                <marker date="1460299776034" expanded="true" signature="711:766" placeholder="SELECT * FRO... frequencia" />
+                <marker date="1460299776034" expanded="true" signature="711:793" placeholder="SELECT * FRO... frequencia" />
+                <marker date="1460299776034" expanded="true" signature="711:794" placeholder="SELECT * FRO... frequencia" />
+                <marker date="1460299776034" expanded="true" signature="711:795" placeholder="SELECT * FRO... frequencia" />
+                <marker date="1460299776034" expanded="true" signature="711:831" placeholder="SELECT * FRO... frequencia" />
+                <marker date="1460299776034" expanded="true" signature="982:1082" placeholder="select * fro... cadaluno" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,13 +57,65 @@
       <file leaf-file-name="database.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/database.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4773218">
-              <caret line="96" column="31" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.37704918">
+              <caret line="432" column="18" selection-start-line="432" selection-start-column="18" selection-end-line="432" selection-end-column="18" />
               <folding>
-                <marker date="1457148876145" expanded="true" signature="10562:10581" placeholder="DELETE FROM " />
-                <marker date="1457148876145" expanded="true" signature="11229:11275" placeholder="INSERT INTO ${$table}... " />
-                <marker date="1457148876145" expanded="true" signature="11985:12017" placeholder="UPDATE ${$ta... " />
+                <marker date="1460293957227" expanded="true" signature="10588:10607" placeholder="DELETE FROM " />
+                <marker date="1460293957227" expanded="true" signature="11255:11301" placeholder="INSERT INTO ${$table}... " />
+                <marker date="1460293957227" expanded="true" signature="12011:12043" placeholder="UPDATE ${$ta... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notas.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/notas.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1460239883344" expanded="true" signature="386:535" placeholder="update cad_n... " />
+                <marker date="1460239883344" expanded="true" signature="741:803" placeholder="select * fro... cad_notas" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frequencia.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/frequencia.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.4074073">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+              <folding>
+                <marker date="1460299108396" expanded="true" signature="1525:3088" placeholder="..." />
+                <marker date="1460299108396" expanded="true" signature="1782:3076" placeholder="..." />
+                <marker date="1460299108396" expanded="true" signature="1795:1824" placeholder="..." />
+                <marker date="1460299108396" expanded="true" signature="1795:1964" placeholder="..." />
+                <marker date="1460299108396" expanded="true" signature="1806:1824" placeholder="..." />
+                <marker date="1460299108396" expanded="true" signature="1978:2114" placeholder="..." />
+                <marker date="1460299108396" expanded="true" signature="1978:3063" placeholder="..." />
+                <marker date="1460299108396" expanded="true" signature="2093:2114" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frequencia.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/frequencia.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/admin.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.296296">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="2" selection-end-line="64" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,7 +128,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/classes/database.class.php" />
+        <option value="$PROJECT_DIR$/classes/funcoes.class.php" />
+        <option value="$PROJECT_DIR$/classes/aluno.class.php" />
+        <option value="$PROJECT_DIR$/assets/css/admin.css" />
+        <option value="$PROJECT_DIR$/assets/js/frequencia.js" />
+        <option value="$PROJECT_DIR$/admin/frequencia.php" />
+        <option value="$PROJECT_DIR$/classes/frequencia.class.php" />
       </list>
     </option>
   </component>
@@ -86,10 +146,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1535" />
-    <option name="height" value="876" />
+    <option name="x" value="48" />
+    <option name="y" value="-3" />
+    <option name="width" value="977" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -116,8 +176,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -133,6 +193,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SistemaAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SistemaAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SistemaAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SistemaAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SistemaAcademico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -166,25 +254,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1535" height="876" extended-state="6" />
+    <frame x="48" y="-3" width="977" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2495114" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24923077" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -203,28 +291,243 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1460239883348" expanded="true" signature="3887:3893" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/aluno.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1460296172270" expanded="true" signature="257:279" placeholder="select * fro... cadaluno" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1460293922603" expanded="true" signature="191:241" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="191:407" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="198:241" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="481:1636" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="503:1627" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="560:1616" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="602:1603" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="640:708" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="743:1588" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="869:1571" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="894:1551" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="935:1058" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="1099:1227" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="1266:1430" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="1292:1407" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="1912:1941" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/login.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding>
+            <marker date="1460293872027" expanded="true" signature="162:263" placeholder="select * fro... seg_usuario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1460239883348" expanded="true" signature="3887:3893" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/aluno.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1460296172270" expanded="true" signature="257:279" placeholder="select * fro... cadaluno" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/database.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4773218">
-          <caret line="96" column="31" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1457148876145" expanded="true" signature="10562:10581" placeholder="DELETE FROM " />
-            <marker date="1457148876145" expanded="true" signature="11229:11275" placeholder="INSERT INTO ${$table}... " />
-            <marker date="1457148876145" expanded="true" signature="11985:12017" placeholder="UPDATE ${$ta... " />
+            <marker date="1460293957227" expanded="true" signature="10588:10607" placeholder="DELETE FROM " />
+            <marker date="1460293957227" expanded="true" signature="11255:11301" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1460293957227" expanded="true" signature="12011:12043" placeholder="UPDATE ${$ta... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/horario.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="31" />
+          <folding>
+            <marker date="1460239883344" expanded="true" signature="264:318" placeholder="select * fro... cad_horario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/addAluno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14950167">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.179402">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <marker date="1460293922603" expanded="true" signature="191:241" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="191:407" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="198:241" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="481:1636" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="503:1627" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="560:1616" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="602:1603" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="640:708" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="743:1588" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="869:1571" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="894:1551" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="935:1058" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="1099:1227" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="1266:1430" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="1292:1407" placeholder="..." />
+            <marker date="1460293922603" expanded="true" signature="1912:1941" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1460239883348" expanded="true" signature="3887:3893" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/login.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38870433">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <marker date="1460293872027" expanded="true" signature="162:263" placeholder="select * fro... seg_usuario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/aluno.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.269103">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <marker date="1460296172270" expanded="true" signature="257:279" placeholder="select * fro... cadaluno" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.296296">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="2" selection-end-line="64" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/frequencia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/funcoes.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.059800666">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/notas.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1460239883344" expanded="true" signature="386:535" placeholder="update cad_n... " />
+            <marker date="1460239883344" expanded="true" signature="741:803" placeholder="select * fro... cad_notas" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/frequencia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4074073">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding>
+            <marker date="1460299108396" expanded="true" signature="1525:3088" placeholder="..." />
+            <marker date="1460299108396" expanded="true" signature="1782:3076" placeholder="..." />
+            <marker date="1460299108396" expanded="true" signature="1795:1824" placeholder="..." />
+            <marker date="1460299108396" expanded="true" signature="1795:1964" placeholder="..." />
+            <marker date="1460299108396" expanded="true" signature="1806:1824" placeholder="..." />
+            <marker date="1460299108396" expanded="true" signature="1978:2114" placeholder="..." />
+            <marker date="1460299108396" expanded="true" signature="1978:3063" placeholder="..." />
+            <marker date="1460299108396" expanded="true" signature="2093:2114" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/frequencia.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.296296">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <marker date="1460299776034" expanded="true" signature="405:540" placeholder="INSERT INTO frequencia... " />
+            <marker date="1460299776034" expanded="true" signature="711:752" placeholder="SELECT * FRO... frequencia" />
+            <marker date="1460299776034" expanded="true" signature="711:753" placeholder="SELECT * FRO... frequencia" />
+            <marker date="1460299776034" expanded="true" signature="711:765" placeholder="SELECT * FRO... frequencia" />
+            <marker date="1460299776034" expanded="true" signature="711:766" placeholder="SELECT * FRO... frequencia" />
+            <marker date="1460299776034" expanded="true" signature="711:793" placeholder="SELECT * FRO... frequencia" />
+            <marker date="1460299776034" expanded="true" signature="711:794" placeholder="SELECT * FRO... frequencia" />
+            <marker date="1460299776034" expanded="true" signature="711:795" placeholder="SELECT * FRO... frequencia" />
+            <marker date="1460299776034" expanded="true" signature="711:831" placeholder="SELECT * FRO... frequencia" />
+            <marker date="1460299776034" expanded="true" signature="982:1082" placeholder="select * fro... cadaluno" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/database.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37704918">
+          <caret line="432" column="18" selection-start-line="432" selection-start-column="18" selection-end-line="432" selection-end-column="18" />
+          <folding>
+            <marker date="1460293957227" expanded="true" signature="10588:10607" placeholder="DELETE FROM " />
+            <marker date="1460293957227" expanded="true" signature="11255:11301" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1460293957227" expanded="true" signature="12011:12043" placeholder="UPDATE ${$ta... " />
           </folding>
         </state>
       </provider>

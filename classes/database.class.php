@@ -23,7 +23,7 @@ class Database {
   private static $operators = array('=', '!=', '>', '>=', '<', '<=', '<>', '!<', '!>', 'IN', 'NOT IN', 'NULL', 'NOT NULL', 'BETWEEN', 'LIKE', 'ILIKE');
 
   public function __construct() {
-    $this->mysql = new mysqli('127.0.0.1', 'root', '', 'SGA');
+    $this->mysql = new mysqli('127.0.0.1', 'root', '123456', 'sga');
     if(mysqli_connect_errno()) {
       throw new Exception('Dados de conexão com o banco de dados incorretos');
     }
