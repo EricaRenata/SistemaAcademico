@@ -60,4 +60,10 @@
       <h4>Visualizar Notas</h4>
     </a>
   </div>
+  <div class="col-sm-6 col-md-3">
+    <a href='verDisciplina.php' class="thumbnail modulos">
+      <span class="glyphicon glyphicon-qrcode"></span>
+      <h4>Disciplinas</h4>
+    </a>
+  </div>
  <?php Funcoes::geraFooter(); ?>

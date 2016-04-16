@@ -11,5 +11,8 @@
   <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
   <link href="../assets/css/admin.css" rel="stylesheet">
 </head>
-<body>
+<body data-alert="<?= (isset($_SESSION['mensagem'])) ? $_SESSION['mensagem'] : ''; ?>">
+<?php 
+  $_SESSION['mensagem'] = '';
+?>
   <div id="conteudo">

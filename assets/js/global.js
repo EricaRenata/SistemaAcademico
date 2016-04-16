@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	var tempo = 3000;
 	var countNotificacao = document.querySelectorAll('.list-group a.notificacao').length;
 	var countNoticia = document.querySelectorAll('.list-group a.noticia').length;
+  if(document.querySelector('body').dataset.alert != '') {
+    alert(document.querySelector('body').dataset.alert);
+  }
 	var verificaNotificacao = setInterval(function() {
 		var obj = {
 			acao: '',

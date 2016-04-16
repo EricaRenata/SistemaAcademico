@@ -4,61 +4,42 @@
   include '../classes/notas.class.php'; 
   Funcoes::geraHeader();
   Funcoes::geraMenus();
-  $dados = (Object) $_POST;
-  $objetoNotas = new Notas();
-  if(count($dados) && isset($dados->acao) && $dados->acao == "Salvar") {
-    $itens['cd_aluno'] = $dados->cd_aluno;
-    $itens['cd_turma'] = $dados->cd_turma;
-    $itens['nota1'] = $dados->nota1;
-    $itens['nota2'] = $dados->nota2;
-    $itens['status'] = $dados->status;
-    $objetoNotas->insereNotas($itens);
-  }
 ?>
-<form action="verNotas2.php" method="post">
+<form action="verNotas.php" method="post">
 
   <div class="row">
     <div class="col-md-12">
-      <h4> <strong> Curso:</strong> Administrador de Redes e SQL Server com Assistência Técnica e Design </h4> 
+      <h4> <strong> Curso:</strong> Administrador de Redes e SQL Server com Assistência Técnica e Design </h4>
     </div>
   </div>
-
+ <div class="row">
+    <div class="col-md-12">
   <table class="table table-hover">
-  <tbody>
+   <thead>
     <tr>
-      <td> Disciplina </td> 
+      <td class="text-left"> Disciplina </td> 
       <td class="text-center"> Nota 1 </td> 
       <td class="text-center"> Nota 2 </td> 
       <td class="text-center"> Status </td> 
+   </thead>
     </tr>
-    <?php
-      $objetoAluno = new Aluno();
-      $alunos = $objetoAluno->getAlunos();
-      foreach ($alunos as $aluno) :
-      $notas = $objetoNotas->getNotas($aluno->cd_aluno);
-    ?>
+      <tbody>
+      <?php for($i = 0; $i < 12; $i++) : ?>
       <tr>
-        <input type="hidden" name="cd_turma" value="<?= $aluno->cd_aluno; ?>">
-        <td class="col-md-6">
-          <input type="hidden" name="cd_aluno" value="<?= $aluno->cd_aluno; ?>"><?= $aluno->razao_social; ?>
-        </td> 
-        <td class="col-md-2 text-center">
-          <input type="text" maxlength="3" data-id="<?= $aluno->cd_aluno; ?>" class="form-control notas" name="nota1<?= $aluno->cd_aluno; ?>" value="<?= (isset($notas[0])) ? $notas[0]->nota1 : '' ; ?>">
-        </td> 
-        <td class="col-md-2 text-center">
-          <input type="text" maxlength="3" class="form-control notas" data-id="<?= $aluno->cd_aluno; ?>" name="nota2<?= $aluno->cd_aluno; ?>" value="<?= (isset($notas[0])) ? $notas[0]->nota2 : '' ; ?>">
-        </td> 
-        <td class="col-md- text-center">
-          <label class="label <?= (isset($notas[0]) && $notas[0]->status) ? 'label-success' : ' status-aluno'; ?>" data-id="<?= $aluno->cd_aluno; ?>">
-            <?= (isset($notas[0]) && $notas[0]->status) ? 'Aprovado' : ' - '; ?> 
-          </label>
-          <input type="hidden" name="status" data-id="<?= $aluno->cd_aluno; ?>" value="<?= (isset($notas[0]) && $notas[0]->status) ? 1 : 0; ?>">
-        </td> 
+        <td>&nbsp;</td>  
+        <td>&nbsp;</td>
+        <td>&nbsp;</td> 
+        <td>&nbsp;</td> 
       </tr>
+      <?php endfor; ?>
       </tbody>
-    <?php endforeach; ?>
   </table>
-  <input type="hidden" value="Salvar" name="acao"></input>
-  <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+    </div>
+    <div class="col-md-6">
+      <input type="hidden" value="Salvar" name="acao"></input>
+      <button type="submit" class="btn btn-primary btn-block">Imprimir</button>
+ </div>
+
+
 </form>
 <?php Funcoes::geraFooter("notas"); ?>
