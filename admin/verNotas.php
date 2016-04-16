@@ -15,32 +15,18 @@
     $objetoNotas->insereNotas($itens);
   }
 ?>
-<form action="verNotas.php" method="post">
+<form action="verNotas2.php" method="post">
 
   <div class="row">
     <div class="col-md-12">
       <h4> <strong> Curso:</strong> Administrador de Redes e SQL Server com Assistência Técnica e Design </h4> 
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h4> <strong>Professor:</strong> José Souza da Costa de Jesus</h4> 
-    </div>
-    <div class="col-md-3">
-      <h4> <strong>Código:</strong> 13363  </h4> 
-    </div>
-    <div class="col-md-3">
-      <h4> <strong> Carga Horária:</strong> 100  </h4> 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <h4> <strong> Disciplina:</strong> Web Design I </h4> 
-    </div>
-  </div>
-  <table class="table table-bordered">
+
+  <table class="table table-hover">
+  <tbody>
     <tr>
-      <td> Nome </td> 
+      <td> Disciplina </td> 
       <td class="text-center"> Nota 1 </td> 
       <td class="text-center"> Nota 2 </td> 
       <td class="text-center"> Status </td> 
@@ -69,6 +55,7 @@
           <input type="hidden" name="status" data-id="<?= $aluno->cd_aluno; ?>" value="<?= (isset($notas[0]) && $notas[0]->status) ? 1 : 0; ?>">
         </td> 
       </tr>
+      </tbody>
     <?php endforeach; ?>
   </table>
   <input type="hidden" value="Salvar" name="acao"></input>
