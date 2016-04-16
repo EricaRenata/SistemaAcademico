@@ -7,22 +7,20 @@ class Frequencia extends Funcoes {
     foreach ($itens as $alunos) {
 	    if(is_array($alunos)) {
         $verifica = $this->verificaFrequencia($alunos['cd_curso'], $alunos['cd_aluno'], $alunos['data']);
-
-//        if() {
-//          echo 'existe';
-//        }else {
-//          $objetoSql->query("INSERT INTO frequencia (cd_curso, cd_aluno, presenca) VALUES (".$alunos["cd_curso"].", ".$alunos["cd_aluno"].",".$alunos["presenca"].")");
-//        }
-	    }
+       if(count($verifica)) {
+         echo 'existe';
+       }else {
+        echo "INSERT INTO frequencia (cd_curso, cd_aluno, presenca) VALUES ({$alunos["cd_curso"]}, {$alunos["cd_aluno"]},{$alunos["presenca"]},".$alunos["data"].")";
+         // $objetoSql->query("INSERT INTO frequencia (cd_curso, cd_aluno, presenca) VALUES ({$alunos["cd_curso"]}, {$alunos["cd_aluno"]},{$alunos["presenca"]},".$alunos["data"].")");
+       }
+      }
 
     }
   }
 
   public function verificaFrequencia($cd_curso, $cd_aluno, $data) {
     $objetoSql = new Database();
-    $verifica = $objetoSql->query('SELECT * FROM frequencia where cd_aluno = 1 AND data = "2016-04-10" AND cd_curso = 1')->result();
-    print_r($verifica);
-    die();
+    $verifica = $objetoSql->query('SELECT * FROM frequencia where cd_aluno = 1 AND cd_curso = 1')->result();
     return $verifica;
   }
 
