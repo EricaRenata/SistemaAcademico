@@ -7,8 +7,8 @@
 
   if(count($_POST) && $dados->acao == "Salvar") {
     $objetoAluno = new Aluno(); 
-    $itens['matricula'] = (isset($dados->matricula)) ? $dados->matricula : null;
-    $itens['cd_curso']     = (isset($dados->curso)) ? $dados->curso : null;
+    $itens['matricula'] = (isset($dados->matricula)) ? (Int)$dados->matricula : null;
+    $itens['cd_curso']     = (isset($dados->curso)) ? (Int)$dados->curso : null;
     $itens['usuario']   = (isset($dados->usuario)) ? $dados->usuario : null;
     $itens['senha']     = (isset($dados->senha)) ? $dados->senha : null;
     $objetoAluno->gravaAluno($itens);
