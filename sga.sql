@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Abr-2016 às 14:17
+-- Generation Time: 16-Abr-2016 às 15:28
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -30,23 +30,21 @@ CREATE TABLE IF NOT EXISTS `cadaluno` (
 `cd_aluno` bigint(45) NOT NULL,
   `razao_social` varchar(125) NOT NULL,
   `matricula` bigint(45) NOT NULL,
-  `cd_curso` bigint(45) NOT NULL,
-  `usuario` char(45) NOT NULL,
-  `senha` char(60) NOT NULL
+  `cd_curso` bigint(45) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cadaluno`
 --
 
-INSERT INTO `cadaluno` (`cd_aluno`, `razao_social`, `matricula`, `cd_curso`, `usuario`, `senha`) VALUES
-(1, 'Eliseu dos Santos', 123, 1, '1', '123456'),
-(2, 'Erica Renata', 123, 23, 'erica', '123456'),
-(3, 'Jose da Silva', 23424, 1, '3434', '34'),
-(4, 'Maria Santos Gomes', 23424, 1, '3434', '34'),
-(5, 'Renata Santos Gomes', 23424, 1, '3434', '34'),
-(6, 'Gomes Jose', 1234567, 4, '123456789', '123456789'),
-(7, 'Gomes Santos Silva', 0, 0, '', '');
+INSERT INTO `cadaluno` (`cd_aluno`, `razao_social`, `matricula`, `cd_curso`) VALUES
+(1, 'Eliseu dos Santos', 123, 1),
+(2, 'Erica Renata', 123, 23),
+(3, 'Jose da Silva', 23424, 1),
+(4, 'Maria Santos Gomes', 23424, 1),
+(5, 'Renata Santos Gomes', 23424, 1),
+(6, 'Gomes Jose', 1234567, 4),
+(7, 'Gomes Santos Silva', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -93,6 +91,20 @@ INSERT INTO `cad_turma` (`cod`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `frequencia`
+--
+
+CREATE TABLE IF NOT EXISTS `frequencia` (
+`cd_frequencia` bigint(20) NOT NULL,
+  `cd_aluno` bigint(20) NOT NULL,
+  `presenca` tinyint(1) NOT NULL,
+  `data` date NOT NULL,
+  `cd_curso` bigint(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `noticias`
 --
 
@@ -127,15 +139,16 @@ CREATE TABLE IF NOT EXISTS `seg_usuario` (
   `login` int(10) NOT NULL,
   `senha` varchar(50) NOT NULL,
 `cd_usuario` bigint(20) NOT NULL,
-  `dt_sistema` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `dt_sistema` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `cd_aluno` bigint(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `seg_usuario`
 --
 
-INSERT INTO `seg_usuario` (`login`, `senha`, `cd_usuario`, `dt_sistema`) VALUES
-(3456, '123456', 1, '2016-03-12 15:22:45');
+INSERT INTO `seg_usuario` (`login`, `senha`, `cd_usuario`, `dt_sistema`, `cd_aluno`) VALUES
+(3456, '123456', 1, '2016-03-12 15:22:45', 1);
 
 --
 -- Indexes for dumped tables
@@ -158,6 +171,12 @@ ALTER TABLE `cad_notas`
 --
 ALTER TABLE `cad_turma`
  ADD PRIMARY KEY (`cod`);
+
+--
+-- Indexes for table `frequencia`
+--
+ALTER TABLE `frequencia`
+ ADD PRIMARY KEY (`cd_frequencia`);
 
 --
 -- Indexes for table `noticias`
@@ -190,6 +209,11 @@ MODIFY `cd_nota` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 ALTER TABLE `cad_turma`
 MODIFY `cod` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12345679;
+--
+-- AUTO_INCREMENT for table `frequencia`
+--
+ALTER TABLE `frequencia`
+MODIFY `cd_frequencia` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `noticias`
 --

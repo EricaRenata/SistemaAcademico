@@ -10,8 +10,8 @@ class Frequencia extends Funcoes {
        if(count($verifica)) {
          echo 'existe';
        }else {
-        echo "INSERT INTO frequencia (cd_curso, cd_aluno, presenca) VALUES ({$alunos["cd_curso"]}, {$alunos["cd_aluno"]},{$alunos["presenca"]},".$alunos["data"].")";
-         // $objetoSql->query("INSERT INTO frequencia (cd_curso, cd_aluno, presenca) VALUES ({$alunos["cd_curso"]}, {$alunos["cd_aluno"]},{$alunos["presenca"]},".$alunos["data"].")");
+        $presenca = (!$alunos["presenca"]) ? '0' : '1';
+         $objetoSql->query("INSERT INTO frequencia (cd_curso, cd_aluno, presenca) VALUES ({$alunos["cd_curso"]}, {$alunos["cd_aluno"]},{$presenca},".$alunos["data"].")");
        }
       }
 
@@ -20,7 +20,8 @@ class Frequencia extends Funcoes {
 
   public function verificaFrequencia($cd_curso, $cd_aluno, $data) {
     $objetoSql = new Database();
-    $verifica = $objetoSql->query('SELECT * FROM frequencia where cd_aluno = 1 AND cd_curso = 1')->result();
+    echo 'SELECT * FROM frequencia where cd_aluno = '.$cd_aluno.' AND cd_curso = '.$cd_curso.'';
+    // $verifica = $objetoSql->query('SELECT * FROM frequencia where cd_aluno = {$cd_aluno} AND cd_curso = $cd_curso')->result();
     return $verifica;
   }
 
