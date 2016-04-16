@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 	var tempo = 3000;
-	var countNotificacao = document.querySelectorAll('.list-group a.notificacao').length;
-	var countNoticia = document.querySelectorAll('.list-group a.noticia').length;
+	var countNotificacao = document.querySelectorAll('.list-group a.notificacao').length+1;
+	var countNoticia = document.querySelectorAll('.list-group a.noticia').length+1;
 	var verificaNotificacao = setInterval(function() {
 		var obj = {
 			acao: '',
@@ -67,10 +67,12 @@ function ajax(obj, callback) {
 }
 
 function insertNotificacao(dados) {
-	html = '<a href="#" class="list-group-item notificacao">' +
-		'<h4 class="list-group-item-heading">Alunos <span class="label label-success data-notificacao pull-right"><span class="glyphicon glyphicon-calendar"> 16/04/2016</span></span></h4>'+
-		'<p class="list-group-item-text">Aluno eliseu adicionado por Eliseu dos Santos      		</p>'+
+	var nova = document.createElement('a');
+	nova.innerHTML = '<a href="#" class="list-group-item notificacao">' +
+		'<h4 class="list-group-item-heading">'+ dados[0].tp_notificacao+' <span class="label label-success data-notificacao pull-right"><span class="glyphicon glyphicon-calendar"> 16/04/2016</span></span></h4>'+
+		'<p class="list-group-item-text">'+dados[0].desc_notificacao+'</p>'+
 	'</a>';
+	document.querySelector('.list-group a').appendChild(nova);
 }
 
 function serializeObject(obj) {
