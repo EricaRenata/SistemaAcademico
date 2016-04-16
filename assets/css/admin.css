@@ -63,3 +63,15 @@ a:hover, a:visited, a:link, a:active {
 /*.glyphicon-ok:hover {*/
   /*cursor: not-allowed !important;;*/
 /*}*/
+
+.data-notificacao {
+  margin-right: 7px;
+  font-size: 67%;
+}
+
+.list-group {
+  margin-top: 5px;
+  max-height: 575px !important;
+  overflow: overlay !important;
+  margin-bottom: 0px !important;
+}
