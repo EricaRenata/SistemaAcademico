@@ -4,6 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include 'database.class.php';
+include 'notificacoes.class.php';
 class Funcoes {
 
   public static function geraHeader() {
@@ -32,6 +33,7 @@ class Funcoes {
   }
 
   public static function geraMenuDireita() {
+
     include 'partials/menu_direita.php';
   }
 

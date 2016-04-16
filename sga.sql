@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Abr-2016 às 15:44
+-- Generation Time: 16-Abr-2016 às 18:24
 -- Versão do servidor: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -39,12 +39,26 @@ CREATE TABLE `cadaluno` (
 
 INSERT INTO `cadaluno` (`cd_aluno`, `razao_social`, `matricula`, `cd_curso`) VALUES
 (1, 'Eliseu dos Santos', 123, 1),
-(2, 'Erica Renata', 123, 23),
-(3, 'Jose da Silva', 23424, 1),
-(4, 'Maria Santos Gomes', 23424, 1),
-(5, 'Renata Santos Gomes', 23424, 1),
-(6, 'Gomes Jose', 1234567, 4),
-(7, 'Gomes Santos Silva', 0, 0);
+(14, '4567', 3456, 1),
+(15, '5678', 456, 1),
+(16, '121212', 1221212, 1),
+(17, '121212', 1221212, 1),
+(18, '121212', 1221212, 1),
+(19, '121212', 1221212, 1),
+(20, '121212', 1221212, 1),
+(21, '121212', 1221212, 1),
+(22, 'Jjjjjjjj', 555555, 1),
+(23, '7777', 4567, 1),
+(24, '8888', 88888, 1),
+(25, '8888', 88888, 1),
+(26, '8888', 88888, 1),
+(27, '09090909', 90909, 1),
+(28, '090909', 909, 1),
+(29, '989898', 98989, 1),
+(30, '789798', 87879, 1),
+(31, '7897897', 87987, 1),
+(32, '9090', 99090909, 1),
+(33, '6786876876', 2147483647, 1);
 
 -- --------------------------------------------------------
 
@@ -115,6 +129,7 @@ CREATE TABLE `cad_turma` (
 --
 
 INSERT INTO `cad_turma` (`cod`, `descricao`) VALUES
+(1212121, 'ProgramaÃ§Ã£o'),
 (12345678, 'qwertyuiokmgfdsdfghj');
 
 -- --------------------------------------------------------
@@ -174,6 +189,34 @@ INSERT INTO `noticias` (`tit_noticia`, `desc_noticia`, `imagem`, `cd_noticias`, 
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `notificacoes`
+--
+
+CREATE TABLE `notificacoes` (
+  `cd_notificacao` bigint(20) NOT NULL,
+  `cd_usuario` bigint(20) NOT NULL,
+  `tp_notificacao` varchar(80) NOT NULL,
+  `desc_notificacao` text NOT NULL,
+  `dt_sistema` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `notificacoes`
+--
+
+INSERT INTO `notificacoes` (`cd_notificacao`, `cd_usuario`, `tp_notificacao`, `desc_notificacao`, `dt_sistema`) VALUES
+(1, 1, 'Aluno', 'Aluno adicionado', '0000-00-00'),
+(2, 1, 'Aluno', 'Aluno adicionado', '0000-00-00'),
+(3, 1, 'Aluno', 'Aluno adicionado', '0000-00-00'),
+(4, 1, 'Aluno', 'AlunoEliseuadicionado', '0000-00-00'),
+(5, 1, 'Aluno', 'Aluno Outro adicionado', '0000-00-00'),
+(6, 1, 'Aluno', 'Aluno 9090 adicionado', '0000-00-00'),
+(7, 1, 'Aluno', 'Aluno 6786876876 adicionado por Eliseu dos Santos', '0000-00-00'),
+(8, 1, 'Turma', 'Turma ProgramaÃ§Ã£o adicionado por Eliseu dos Santos', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `seg_usuario`
 --
 
@@ -190,7 +233,10 @@ CREATE TABLE `seg_usuario` (
 --
 
 INSERT INTO `seg_usuario` (`login`, `senha`, `cd_usuario`, `dt_sistema`, `cd_aluno`) VALUES
-(3456, '123456', 1, '2016-03-12 15:22:45', 1);
+(3456, '123456', 1, '2016-03-12 15:22:45', 1),
+(7897897, '789798', 2, '2016-04-16 15:56:52', 31),
+(9090, '9090', 3, '2016-04-16 15:57:28', 32),
+(2147483647, '6786876876', 4, '2016-04-16 15:59:14', 33);
 
 --
 -- Indexes for dumped tables
@@ -245,6 +291,12 @@ ALTER TABLE `noticias`
   ADD PRIMARY KEY (`cd_noticias`);
 
 --
+-- Indexes for table `notificacoes`
+--
+ALTER TABLE `notificacoes`
+  ADD PRIMARY KEY (`cd_notificacao`);
+
+--
 -- Indexes for table `seg_usuario`
 --
 ALTER TABLE `seg_usuario`
@@ -258,7 +310,7 @@ ALTER TABLE `seg_usuario`
 -- AUTO_INCREMENT for table `cadaluno`
 --
 ALTER TABLE `cadaluno`
-  MODIFY `cd_aluno` bigint(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cd_aluno` bigint(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `cad_curso`
 --
@@ -295,10 +347,15 @@ ALTER TABLE `lista_diciplina`
 ALTER TABLE `noticias`
   MODIFY `cd_noticias` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `notificacoes`
+--
+ALTER TABLE `notificacoes`
+  MODIFY `cd_notificacao` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
 -- AUTO_INCREMENT for table `seg_usuario`
 --
 ALTER TABLE `seg_usuario`
-  MODIFY `cd_usuario` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cd_usuario` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
