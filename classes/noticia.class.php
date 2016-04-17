@@ -21,7 +21,7 @@ Class Noticia extends Funcoes {
     foreach ($noticias as $itens) { ?>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="assets/imagens/noticias.jpg" alt="...">
+          <img src="assets/imagens/news2.gif" alt="...">
           <div class="caption">
             <h3><?= $itens->tit_noticia;?></h3>
             <p><?= $itens->desc_noticia;?></p>

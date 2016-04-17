@@ -68,7 +68,7 @@
   </li>
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <i class="glyphicon glyphicon-user"></i> <?= $_SESSION['nome']; ?>
+      <i class="glyphicon glyphicon-user"></i> <?= (isset($_SESSION['administrador'])) ? $_SESSION['administrador'] : $_SESSION['nome']; ?>
     </a>
     <ul class="dropdown-menu dropdown-user">
       <li><a href="#"><i class="glyphicon glyphicon-user"></i> Ver Perfil</a></li>

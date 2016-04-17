@@ -27,14 +27,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">SGA</a>
+              <a class="navbar-brand" href="#">SGA - Sistema de Gestao Acadêmica</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Inicio</a></li>
-                <li class=""><a href="#">FAQ</a></li>
-                <li class=""><a href="#">FAQ</a></li>
-              </ul>
               <a class="btn btn-danger pull-right margin-login" href="login.php"><span class="glyphicon glyphicon-user"></span> Fazer Login</a>
             </div>
           </div>
@@ -50,7 +45,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="assets/imagens/slide2.jpg" alt="First slide">
+          <img class="first-slide" src="assets/imagens/ela.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Exemplo Noticia.</h1>
@@ -59,7 +54,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="first-slide" src="assets/imagens/slide2.jpg" alt="First slide">
+          <img class="first-slide" src="assets/imagens/news1.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Exemplo Noticia.</h1>
