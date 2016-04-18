@@ -37,6 +37,7 @@ Class LoginUsuario extends Funcoes {
 			$_SESSION['login'] = $dados->login;
 			$_SESSION['logado'] = true;
 			$_SESSION['cd_usuario'] = $dados->cd_usuario;
+			$_SESSION['cd_aluno'] = ($dados->cd_aluno) ? $dados->cd_usuario : null;
 			$_SESSION['nome'] = $dados->razao_social;
 			$_SESSION['super'] = $dados->super;	
 			$_SESSION['administrador'] = $dados->administrador;	

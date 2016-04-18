@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Abr-2016 às 23:05
+-- Generation Time: 19-Abr-2016 às 01:10
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -59,6 +59,25 @@ INSERT INTO `cadaluno` (`cd_aluno`, `razao_social`, `matricula`, `cd_curso`) VAL
 (31, '7897897', 87987, 1),
 (32, '9090', 99090909, 1),
 (33, '6786876876', 2147483647, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cad_admin`
+--
+
+CREATE TABLE IF NOT EXISTS `cad_admin` (
+`cd_admin` bigint(20) NOT NULL,
+  `razao_social` varchar(180) NOT NULL,
+  `cd_usuario` bigint(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cad_admin`
+--
+
+INSERT INTO `cad_admin` (`cd_admin`, `razao_social`, `cd_usuario`) VALUES
+(1, 'Eduardo', 3);
 
 -- --------------------------------------------------------
 
@@ -184,6 +203,25 @@ INSERT INTO `cad_notas` (`cd_aluno`, `nota1`, `nota2`, `status`, `cd_turma`, `cd
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `cad_prof`
+--
+
+CREATE TABLE IF NOT EXISTS `cad_prof` (
+`cd_prof` bigint(20) NOT NULL,
+  `cd_usuario` bigint(20) NOT NULL,
+  `razao_social` varchar(190) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cad_prof`
+--
+
+INSERT INTO `cad_prof` (`cd_prof`, `cd_usuario`, `razao_social`) VALUES
+(1, 5, 'Erica Renata');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `cad_submodulo`
 --
 
@@ -225,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `frequencia` (
   `presenca` tinyint(1) NOT NULL,
   `data` date NOT NULL,
   `cd_curso` bigint(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -294,18 +332,21 @@ CREATE TABLE IF NOT EXISTS `seg_usuario` (
   `senha` varchar(50) NOT NULL,
 `cd_usuario` bigint(20) NOT NULL,
   `dt_sistema` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `cd_aluno` bigint(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `cd_aluno` bigint(20) NOT NULL,
+  `cd_prof` bigint(1) NOT NULL,
+  `super` tinyint(1) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `seg_usuario`
 --
 
-INSERT INTO `seg_usuario` (`login`, `senha`, `cd_usuario`, `dt_sistema`, `cd_aluno`) VALUES
-(3456, '123456', 1, '2016-03-12 15:22:45', 1),
-(7897897, '789798', 2, '2016-04-16 15:56:52', 31),
-(9090, '9090', 3, '2016-04-16 15:57:28', 32),
-(2147483647, '6786876876', 4, '2016-04-16 15:59:14', 33);
+INSERT INTO `seg_usuario` (`login`, `senha`, `cd_usuario`, `dt_sistema`, `cd_aluno`, `cd_prof`, `super`) VALUES
+(3456, '123456', 1, '2016-03-12 15:22:45', 1, 0, 0),
+(7897897, '789798', 2, '2016-04-16 15:56:52', 31, 0, 0),
+(9090, '9090', 3, '2016-04-16 15:57:28', 32, 0, 1),
+(2147483647, '6786876876', 4, '2016-04-16 15:59:14', 33, 0, 0),
+(123456, '123456', 5, '2016-04-17 19:48:13', 0, 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -316,6 +357,12 @@ INSERT INTO `seg_usuario` (`login`, `senha`, `cd_usuario`, `dt_sistema`, `cd_alu
 --
 ALTER TABLE `cadaluno`
  ADD PRIMARY KEY (`cd_aluno`);
+
+--
+-- Indexes for table `cad_admin`
+--
+ALTER TABLE `cad_admin`
+ ADD PRIMARY KEY (`cd_admin`);
 
 --
 -- Indexes for table `cad_curso`
@@ -346,6 +393,12 @@ ALTER TABLE `cad_modulo`
 --
 ALTER TABLE `cad_notas`
  ADD PRIMARY KEY (`cd_nota`);
+
+--
+-- Indexes for table `cad_prof`
+--
+ALTER TABLE `cad_prof`
+ ADD PRIMARY KEY (`cd_prof`);
 
 --
 -- Indexes for table `cad_submodulo`
@@ -393,6 +446,11 @@ ALTER TABLE `seg_usuario`
 ALTER TABLE `cadaluno`
 MODIFY `cd_aluno` bigint(45) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
 --
+-- AUTO_INCREMENT for table `cad_admin`
+--
+ALTER TABLE `cad_admin`
+MODIFY `cd_admin` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `cad_curso`
 --
 ALTER TABLE `cad_curso`
@@ -418,6 +476,11 @@ MODIFY `cd_modulo` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 ALTER TABLE `cad_notas`
 MODIFY `cd_nota` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
+-- AUTO_INCREMENT for table `cad_prof`
+--
+ALTER TABLE `cad_prof`
+MODIFY `cd_prof` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `cad_submodulo`
 --
 ALTER TABLE `cad_submodulo`
@@ -431,7 +494,7 @@ MODIFY `cod` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12345679;
 -- AUTO_INCREMENT for table `frequencia`
 --
 ALTER TABLE `frequencia`
-MODIFY `cd_frequencia` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `cd_frequencia` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `noticias`
 --
@@ -446,7 +509,7 @@ MODIFY `cd_notificacao` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- AUTO_INCREMENT for table `seg_usuario`
 --
 ALTER TABLE `seg_usuario`
-MODIFY `cd_usuario` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `cd_usuario` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -13,6 +13,12 @@
         </a>
       </div>
       <div class="col-sm-6 col-md-3">
+        <a href="addAluno.php" class="thumbnail modulos">
+          <span class="glyphicon glyphicon-cog"></span>
+          <h4>Adicionar Submodulo</h4>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-3">
         <a href='addTurma.php' class="thumbnail modulos">
           <span class="glyphicon glyphicon-education"></span>
           <h4>Adicionar Turma</h4>
