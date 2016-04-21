@@ -39,7 +39,5 @@
       <input type="button"  name="imprimir"   class="btn btn-primary btn-block" value="Imprimir" onclick="window.print()";>
     </div>
   </div>
-
-
 </form>
-<?php Funcoes::geraFooter("notas"); ?>
+<?php Funcoes::geraFooter(); ?>

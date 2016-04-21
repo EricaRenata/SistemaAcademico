@@ -52,22 +52,6 @@
   </li>
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <i class="glyphicon glyphicon-globe"></i> Notificacoes
-    </a>
-    <ul class="dropdown-menu dropdown-alerts">
-      <li>
-        <a href="#">
-          <div>
-            <i class="glyphicon glyphicon-user"></i> Turma Adicionada
-            <span class="pull-right text-muted small">4 minutos atraz</span>
-          </div>
-        </a>
-      </li>
-      <li class="divider"></li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       <i class="glyphicon glyphicon-user"></i> <?= (isset($_SESSION['administrador'])) ? $_SESSION['administrador'] : $_SESSION['nome']; ?>
     </a>
     <ul class="dropdown-menu dropdown-user">
