@@ -22,15 +22,17 @@ function verificaValor(elemento) {
   if(nota1.value.length <= 3 && nota2.value.length <= 3) {
     valor_nota1 = (nota1.value == 'NaN' || nota1.value == '') ? 0 : nota1.value;
     valor_nota2 = (nota2.value == 'NaN' || nota2.value == '') ? 0 : nota2.value;
-    resultado = parseFloat(valor_nota1) + parseFloat(valor_nota2);
-    setaStatusAluno(elemento.dataset.aluno, resultado, status);
+    resultado = (parseFloat(valor_nota1) + parseFloat(valor_nota2)) / 2;
+    if(nota1.value.length != 0 && nota2.value.length != 0) {
+      setaStatusAluno(elemento.dataset.aluno, resultado, status);
+    }
   }
 }
 
 
 function setaStatusAluno(id, resultado, status) {
   var status_aluno = document.querySelector('label[data-id="'+id+'"]');
-  if(resultado >= 7) {
+  if(resultado >= 6) {
     status_aluno.classList.remove('label-danger')
     status_aluno.classList.remove('status-aluno')
     status_aluno.classList.add('label');

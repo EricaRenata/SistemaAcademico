@@ -12,7 +12,10 @@ $notificacoes = $objetonotificacoes->getNotificacao();
     <?php 
       foreach ($notificacoes as $notificacao) : ?>
       	<a href="#" class="list-group-item notificacao">
-      		<h4 class="list-group-item-heading"><?= $notificacao->tp_notificacao; ?> <span class="label label-success data-notificacao pull-right"><span class="glyphicon glyphicon-calendar"> <?= date('d/m/Y', strtotime($notificacao->dt_sistema)); ?></span></h4>
+      		<h4 class="list-group-item-heading"><?= $notificacao->tp_notificacao; ?> 
+            <span class="label label-success data-notificacao pull-right">
+              <span class="glyphicon glyphicon-calendar"> <?= date('d/m/Y', strtotime($notificacao->dt_sistema)) . ' - '. date('H:m', strtotime($notificacao->dt_sistema)); ?></span> 
+          </h4>
       		<p class="list-group-item-text"><?= $notificacao->desc_notificacao; ?>
       		</p>
     		</a>

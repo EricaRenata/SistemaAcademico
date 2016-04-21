@@ -36,8 +36,7 @@
   </table>
     </div>
     <div class="col-md-6">
-      <input type="hidden" value="Salvar" name="acao"></input>
-      <button type="submit" class="btn btn-primary btn-block">Imprimir</button>
+      <input type="button"  name="imprimir"   class="btn btn-primary btn-block" value="Imprimir" onclick="window.print()";>
     </div>
   </div>
 

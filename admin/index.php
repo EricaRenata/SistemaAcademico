@@ -55,7 +55,7 @@
     <?php endif; ?>
     <?php if(isset($_SESSION['cd_prof']) && $_SESSION['cd_prof'] != 0) : ?>
       <div class="col-sm-6 col-md-3">
-        <a href='frequencia.php' class="thumbnail modulos">
+        <a href='addfrequencia.php' class="thumbnail modulos">
           <span class="glyphicon glyphicon-calendar"></span>
           <h4>Frequência</h4>
         </a>

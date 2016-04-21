@@ -1,6 +1,7 @@
 <?php 
   include '../classes/funcoes.class.php';
   include '../classes/aluno.class.php'; 
+  include '../classes/curso.class.php';
   Funcoes::geraHeader();
   Funcoes::geraMenus();
   $dados = (Object) $_POST;
@@ -29,10 +30,21 @@
         <div class="form-group has-success">
           <label class="control-label" for="inputWarning1">Curso</label>
           <select class="form-control" name="curso">
-            <option value="1">Administrador</option>
-            <option value="2">Design Gráfico</option>
-            <option value="3">Eletricista</option>
-            <option value="4">Mecânica</option>
+              <?php
+              $objetoCurso = new Curso();
+                $listaCurso = $objetoCurso->getCursos();
+                foreach ($listaCurso as $curso) :
+                  if($dados->cd_curso == $curso->cd_curso) :
+            ?>
+                    <option value="<?= $curso->cd_curso ?>" selected><?= $curso->nome_curso; ?></option>
+            <?php 
+                  else :
+            ?>
+                  <option value="<?= $curso->cd_curso ?>"><?= $curso->nome_curso; ?></option>
+            <?php 
+                  endif; 
+                endforeach; 
+            ?>
           </select>
         </div>
       </div>

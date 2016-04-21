@@ -4,7 +4,7 @@
     <list default="true" id="2e33c3c9-d45c-40f1-9140-6c4694bb3ef6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/frequencia.php" afterPath="$PROJECT_DIR$/admin/frequencia.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/addfrequencia.php" afterPath="$PROJECT_DIR$/admin/addfrequencia.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/admin.css" afterPath="$PROJECT_DIR$/assets/css/admin.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/frequencia.js" afterPath="$PROJECT_DIR$/assets/js/frequencia.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/aluno.class.php" afterPath="$PROJECT_DIR$/classes/aluno.class.php" />
@@ -81,8 +81,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="frequencia.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/frequencia.php">
+      <file leaf-file-name="addfrequencia.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/addfrequencia.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-7.4074073">
               <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
@@ -134,7 +134,7 @@
         <option value="$PROJECT_DIR$/classes/aluno.class.php" />
         <option value="$PROJECT_DIR$/assets/css/admin.css" />
         <option value="$PROJECT_DIR$/assets/js/frequencia.js" />
-        <option value="$PROJECT_DIR$/admin/frequencia.php" />
+        <option value="$PROJECT_DIR$/admin/addfrequencia.php" />
         <option value="$PROJECT_DIR$/classes/frequencia.class.php" />
       </list>
     </option>
@@ -484,7 +484,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/frequencia.php">
+    <entry file="file://$PROJECT_DIR$/admin/addfrequencia.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.4074073">
           <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
