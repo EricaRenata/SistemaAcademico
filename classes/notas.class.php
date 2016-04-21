@@ -18,7 +18,7 @@ Class Notas extends Funcoes {
 
   public function getNotas($cd_aluno) {
     $objetoSql = new Database();
-    $result = $objetoSql->query('select * from cad_notas where cd_aluno = '.$cd_aluno.' limit 1')->result();
+    $result = $objetoSql->query('select * from cad_notas left join cad_turma on(cd_turma = cod) where cd_aluno = '.$cd_aluno.' limit 1')->result();
     return $result;
   }
 

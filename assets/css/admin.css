@@ -75,3 +75,9 @@ a:hover, a:visited, a:link, a:active {
   overflow: overlay !important;
   margin-bottom: 0px !important;
 }
+
+@media print {
+  .imprimi-notas, .labelcurso, .breadcrumb{
+    display: none;
+  }
+}
