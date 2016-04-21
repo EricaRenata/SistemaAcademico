@@ -5,7 +5,7 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a class="navbar-brand">Sistema de Gestao Academica</a>
+  <a class="navbar-brand">Sistema de Gestão Acadêmica</a>
 </div>
 <ul class="nav navbar-top-links navbar-right">
   <li class="dropdown">
@@ -44,22 +44,6 @@
                     <span class="sr-only">7</span>
                 </div>
             </div>
-          </div>
-        </a>
-      </li>
-      <li class="divider"></li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <i class="glyphicon glyphicon-globe"></i> Notificacoes
-    </a>
-    <ul class="dropdown-menu dropdown-alerts">
-      <li>
-        <a href="#">
-          <div>
-            <i class="glyphicon glyphicon-user"></i> Turma Adicionada
-            <span class="pull-right text-muted small">4 minutos atraz</span>
           </div>
         </a>
       </li>

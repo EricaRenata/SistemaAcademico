@@ -7,7 +7,7 @@ $notificacoes = $objetonotificacoes->getNotificacao();
 <div class="navbar-default sidebar-right" role="navigation">
   <div class="list-group">
   	<a href="#" class="list-group-item active">
-	    <h4 class="list-group-item-heading"><span class="glyphicon glyphicon-globe"></span> Ultimas Notificações</h4>
+	    <h4 class="list-group-item-heading"><span class="glyphicon glyphicon-globe"></span> Últimas Notificações</h4>
 	  </a>
     <?php 
       foreach ($notificacoes as $notificacao) : ?>
