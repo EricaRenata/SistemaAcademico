@@ -32,9 +32,15 @@
       </div>
     <?php endif; ?>
     <div class="col-sm-6 col-md-3">
-      <a class="thumbnail modulos">
+      <a href="addArquivo.php" class="thumbnail modulos">
         <span class="glyphicon glyphicon-folder-open"></span>
         <h4>Material Aula </h4>
+      </a>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <a href="download.php" class="thumbnail modulos">
+        <span class="glyphicon glyphicon-folder-open"></span>
+        <h4>Baixar Materiais</h4>
       </a>
     </div>
     <?php if(isset($_SESSION['cd_prof'])) : ?>

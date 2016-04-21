@@ -75,3 +75,7 @@ a:hover, a:visited, a:link, a:active {
   overflow: overlay !important;
   margin-bottom: 0px !important;
 }
+
+.arquivos img {
+  height: 154px;
+}
