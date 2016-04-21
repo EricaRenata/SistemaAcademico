@@ -1,3 +1,4 @@
+
 <?php 
   include '../classes/funcoes.class.php';
   include '../classes/noticia.class.php'; 
@@ -71,6 +72,7 @@
       <div class="col-md-3">
         <button type"submit" value="Salvar" name="acao" class="btn btn-primary form-control">Salvar</button>
       </div>
+    </div>
     </div>
   </form>
  <?php Funcoes::geraFooter(); ?>
