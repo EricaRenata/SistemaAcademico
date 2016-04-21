@@ -2,13 +2,31 @@
   include '../classes/funcoes.class.php'; 
   include '../classes/aluno.class.php'; 
   include '../classes/notas.class.php'; 
+   include '../classes/curso.class.php'; 
   Funcoes::geraHeader();
   Funcoes::geraMenus();
 ?>
 <form action="verHorario.php" method="post">
   <div class="row">
-    <div class="col-md-12">
-      <h4> <strong> Curso:</strong> Administrador de Redes e SQL Server com Assistência Técnica e Design </h4>
+    <div class="col-md-12 form-group">
+     <label for="exampleInputEmail1">Selecione o curso</label>
+          <select class="form-control" name="cd_curso" >
+            <?php
+              $objetoCurso = new Curso();
+                $listaCurso = $objetoCurso->getCursos();
+                foreach ($listaCurso as $curso) :
+                  if($dados->cd_curso == $curso->cd_curso) :
+            ?>
+                    <option value="<?= $curso->cd_curso ?>" selected><?= $curso->nome_curso; ?></option>
+            <?php 
+                  else :
+            ?>
+                  <option value="<?= $curso->cd_curso ?>"><?= $curso->nome_curso; ?></option>
+            <?php 
+                  endif; 
+                endforeach; 
+            ?>
+          </select>
     </div>
   </div>
   <div class="row">

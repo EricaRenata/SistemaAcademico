@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SGA - Sistema Academico</title>
+  <title>SGA - Sistema de Gestão Acadêmico</title>
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
   <link href="../assets/css/admin.css" rel="stylesheet">

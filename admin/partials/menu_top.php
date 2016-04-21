@@ -5,7 +5,7 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a class="navbar-brand">Sistema de Gestao Academica</a>
+  <a class="navbar-brand">Sistema de Gestão Acadêmica</a>
 </div>
 <ul class="nav navbar-top-links navbar-right">
   <li class="dropdown">

@@ -1,4 +1,4 @@
 <div id="conteudo-pagina">  
   <ol class="breadcrumb">
-    <li><a href="index.php">Inicio</a></li>
+    <li><a href="index.php">Início</a></li>
   </ol>
