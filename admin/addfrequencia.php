@@ -14,7 +14,6 @@
 
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane <?= (!isset($dados->acao)) ? 'active' : ''; ?>" id="home">
-    <div role="tabpanel" class="tab-pane <?= (!isset($dados->acao)) ? 'active' : ''; ?>" id="home">
 	    <form method="POST" action="addfrequencia.php" name="consulta">
 		    <div class="form-group">
 			    <label for="exampleInputEmail1">Selecione o curso</label>

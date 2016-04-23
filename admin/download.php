@@ -6,41 +6,42 @@
 ?>
 <div>
 
-<?php foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator('../uploads/cursos/')) as $filename) : 
-  if ($filename->isDir()) continue;
-?>
+<?php 
+$root = '../uploads/cursos';
+
+$iter = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($root, RecursiveDirectoryIterator::SKIP_DOTS),
+    RecursiveIteratorIterator::SELF_FIRST,
+    RecursiveIteratorIterator::CATCH_GET_CHILD // Ignore "Permission denied"
+);
+
+$arquivos = array($root);
+foreach ($iter as $arquivo => $dir) :
+  if (!$dir->isDir()) : ?>
   <div class="row">
-  <?php 
-    $diretorio = explode("/", $filename)[2];
-    $arquivo = explode("\\", $diretorio)[2]; 
-    $extensao = explode(".", $diretorio)[1]; 
+  <?php
+    $extensao = explode(".", $arquivo)[3]; 
     ?>
-		  <div class="col-sm-6 col-md-4 arquivos">
+		   <div class="col-sm-6 col-md-4 arquivos">
 		    <div class="thumbnail">
 		  		<?php if($extensao == 'pdf') : ?>
 		      	<img src="../assets/imagens/pdf.png" height="10">
 		    	<?php elseif($extensao == 'png' || $extensao == 'gif' || $extensao == 'jpg' || $extensao == 'jpeg') : ?>  	
-		      	<img src="../uploads/<?= $diretorio; ?>" height="10">
+		      	<img src="<?= $arquivo; ?>" height="10">
 		    	<?php endif; ?>  	
 		      <div class="caption">
 		        <h4><?= $arquivo; ?></h4>
 		        <p>
-		        	<a href="../uploads/<?= $diretorio; ?>" class="btn btn-default" role="button">Visualizar</a>
-		        	<a href="../uploads/<?= $diretorio; ?>" class="btn btn-primary" role="button" download>Baixar</a>
+		        	<a href="<?= $arquivo; ?>" class="btn btn-default" role="button">Visualizar</a>
+		        	<a href="<?= $arquivo; ?>" class="btn btn-primary" role="button" download>Baixar</a>
 	        	</p>
 		      </div>
 		    </div>
 		  </div>
-
-<?php endforeach; ?>
-		</div>
+    <?php 
+    endif;
+    endforeach; ?>
+  </div>
 
 </div>
-
-
-
-
-
-
-
 <?php Funcoes::geraFooter(); ?>

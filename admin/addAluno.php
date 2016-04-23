@@ -1,7 +1,7 @@
 <?php 
   include '../classes/funcoes.class.php';
+  include '../classes/turma.class.php';
   include '../classes/aluno.class.php'; 
-  include '../classes/curso.class.php';
   Funcoes::geraHeader();
   Funcoes::geraMenus();
   $dados = (Object) $_POST;
@@ -9,7 +9,7 @@
   if(count($_POST) && $dados->acao == "Salvar") {
     $objetoAluno = new Aluno(); 
     $itens['matricula'] = (isset($dados->matricula)) ? (Int)$dados->matricula : null;
-    $itens['cd_curso']     = (isset($dados->curso)) ? (Int)$dados->curso : null;
+    $itens['cd_turma']     = (isset($dados->cd_turma)) ? (Int)$dados->cd_turma : null;
     $itens['usuario']   = (isset($dados->usuario)) ? $dados->usuario : null;
     $itens['senha']     = (isset($dados->senha)) ? $dados->senha : null;
     $objetoAluno->gravaAluno($itens);
@@ -23,24 +23,24 @@
       <div class="col-md-4">
         <div class="form-group has-success">
           <label class="control-label" for="inputSuccess1">Matricula</label>
-          <input type="number" class="form-control" id="inputSuccess1" value="" name="matricula" aria-describedby="helpBlock2">
+          <input type="text" class="form-control" id="inputSuccess1" value="" name="matricula" aria-describedby="helpBlock2">
         </div>
       </div>
       <div class="col-md-5">
         <div class="form-group has-success">
-          <label class="control-label" for="inputWarning1">Curso</label>
-          <select class="form-control" name="curso">
+          <label class="control-label" for="inputWarning1">Turma</label>
+          <select class="form-control" name="cd_turma">
               <?php
-              $objetoCurso = new Curso();
-                $listaCurso = $objetoCurso->getCursos();
-                foreach ($listaCurso as $curso) :
-                  if($dados->cd_curso == $curso->cd_curso) :
+              $objetoTurma = new Turma();
+                $listaTurma = $objetoTurma->getTurmas();
+                foreach ($listaTurma as $turma) :
+                  if($dados->cd_turma == $turma->cd_turma) :
             ?>
-                    <option value="<?= $curso->cd_curso ?>" selected><?= $curso->nome_curso; ?></option>
+                    <option value="<?= $turma->cd_turma ?>" selected><?= $turma->cd_turma . ' - '. $turma->desc_curso . ' - '. $turma->turno; ?></option>
             <?php 
                   else :
             ?>
-                  <option value="<?= $curso->cd_curso ?>"><?= $curso->nome_curso; ?></option>
+                  <option value="<?= $turma->cd_turma ?>"><?= $turma->cd_turma . ' - '. $turma->desc_curso . ' - '. $turma->turno; ?></option>
             <?php 
                   endif; 
                 endforeach; 
@@ -60,21 +60,6 @@
           <input type="password" value="" class="form-control" id="inputError1" name="senha">
         </div>
       </div>  
-    </div>
-    <div class="row margin-10">
-      <div class="col-md-12">
-        <div>
-          <label class="control-label" for="inputError1">Permissões:</label>
-        </div>
-          <select class="caixa form-control" multiple="multiple">
-            <option value="1">Administrador</option>
-            <option value="2">Aluno</option>
-          </select>
-          <select class="caixa form-control" multiple="multiple">
-            <option value="1">Administrador</option>
-            <option value="2">Aluno</option>
-          </select>
-      </div>
     </div>
     <div class="row margin-10">
       <div class="col-md-3">

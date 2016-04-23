@@ -9,7 +9,7 @@ class Aluno extends Funcoes {
     $objetoSql3 = new Database();
     $aluno = array(
   		'matricula' => $itens['matricula'],
-  		'cd_curso' => $itens['cd_curso'],
+  		'cd_turma' => $itens['cd_turma'],
   		'razao_social' => $itens['usuario']
   	);
     $objetoSql->insert('cadaluno', $aluno);
