@@ -34,7 +34,6 @@
             </div>
           </div>
         </nav>
-
       </div>
     </div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -81,7 +80,7 @@
       </div>
     </div>
     <footer class="text-center">
-      <p>&copy; 2016 SGA, Inc. &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos</a></p>
+      <p>&copy; 2016 SGA - Sistema de Gestão Acadêmica, Inc. &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos</a></p>
     </footer>
 
     </div>
