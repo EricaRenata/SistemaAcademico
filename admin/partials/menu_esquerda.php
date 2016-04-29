@@ -12,9 +12,20 @@
         </div>
       </li>
       <li>
-        <a href="#"><i class="glyphicon glyphicon-tasks"></i> Módulos<span class="glyphicon glyphicon-triangle-bottom pull-right"></span></a>
+        <a href="#"><i class="glyphicon glyphicon-tasks"></i> Módulos</a>
         <ul class="nav nav-second-level">
-          <li>
+          <?php
+            $objetoModulos = new Database();
+            $objetoModulos1 = new Database();
+            $modulos = $objetoModulos->query("select * from cad_modulo")->result();
+            foreach ($modulos as $modulo) :
+          ?>
+              <li>
+                <a href="#"><span class="glyphicon glyphicon-modal-window"></span> <?= $modulo->nome_modulo; ?></a>
+              </li>
+          <?php endforeach; ?>
+        </ul>
+          <!-- <li>
             <a href="#"><span class="glyphicon glyphicon-modal-window"></span> Administrador</a>
             <ul class="nav nav-third-level">
               <li>
@@ -67,6 +78,6 @@
           </li>
         </ul>
       </li>
-    </ul>
+    </ul>-->
   </div>
 </div>
