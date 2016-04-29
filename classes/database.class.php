@@ -23,7 +23,7 @@ class Database {
   private static $operators = array('=', '!=', '>', '>=', '<', '<=', '<>', '!<', '!>', 'IN', 'NOT IN', 'NULL', 'NOT NULL', 'BETWEEN', 'LIKE', 'ILIKE');
 
   public function __construct() {
-    $this->mysql = new mysqli('192.168.56.1', 'root','', 'sga');
+    $this->mysql = new mysqli('localhost', 'root','', 'sga');
     if(mysqli_connect_errno()) {
       throw new Exception('Dados de conexão com o banco de dados incorretos');
     }
@@ -117,7 +117,7 @@ class Database {
     return $this;
   }
 
-  public function where($column, $value, $escape = TRUE) {
+  public function where($column, $value, $escape = FALSE) {
     if(is_array($column)) {
       foreach ($column as $key => $value) {
         $this->_where($key, $value, $operator, 'AND', $escape);
@@ -128,7 +128,7 @@ class Database {
     return $this;
   }
 
-  public function or_where($column, $value, $escape = TRUE) {
+  public function or_where($column, $value, $escape = FALSE) {
     if(is_array($column)) {
       foreach ($column as $key => $value) {
         $this->_where($key, $value, $operator, 'OR', $escape);
@@ -139,52 +139,52 @@ class Database {
     return $this;
   }
 
-  public function where_in($column, $values, $escape = TRUE) {
+  public function where_in($column, $values, $escape = FALSE) {
     $this->_where($column, $values, 'IN', 'AND', $escape);
     return $this;
   }
 
-  public function or_where_in($column, $values, $escape = TRUE) {
+  public function or_where_in($column, $values, $escape = FALSE) {
     $this->_where($column, $values, 'IN', 'OR', $escape);
     return $this;
   }
 
-  public function where_not_in($column, $values, $escape = TRUE) {
+  public function where_not_in($column, $values, $escape = FALSE) {
     $this->_where($column, $values, 'NOT IN', 'AND', $escape);
     return $this;
   }
 
-  public function or_where_not_in($column, $values, $escape = TRUE) {
+  public function or_where_not_in($column, $values, $escape = FALSE) {
     $this->_where($column, $values, 'NOT IN', 'OR', $escape);
     return $this;
   }
 
-  public function where_null($column, $escape = TRUE) {
+  public function where_null($column, $escape = FALSE) {
     $this->_where($column, NULL, 'NULL', 'AND', $escape);
     return $this;
   }
 
-  public function or_where_null($column, $escape = TRUE) {
+  public function or_where_null($column, $escape = FALSE) {
     $this->_where($column, NULL, 'NULL', 'OR', $escape);
     return $this;
   }
 
-  public function where_not_null($column, $escape = TRUE) {
+  public function where_not_null($column, $escape = FALSE) {
     $this->_where($column, NULL, 'NOT NULL', 'AND', $escape);
     return $this;
   }
 
-  public function or_where_not_null($column, $escape = TRUE) {
+  public function or_where_not_null($column, $escape = FALSE) {
     $this->_where($column, NULL, 'NOT NULL', 'OR', $escape);
     return $this;
   }
 
-  public function where_between($column, $range, $escape = TRUE) {
+  public function where_between($column, $range, $escape = FALSE) {
     $this->_where($column, $range, 'BETWEEN', 'AND', $escape);
     return $this;
   }
 
-  public function or_where_between($column, $range, $escape = TRUE) {
+  public function or_where_between($column, $range, $escape = FALSE) {
     $this->_where($column, $range, 'BETWEEN', 'OR', $escape);
     return $this;
   }
@@ -386,7 +386,7 @@ class Database {
     $this->clearAttributes();
   }
 
-  public function insert($table, $items, $escape = TRUE) {
+  public function insert($table, $items, $escape = FALSE) {
     if(!is_string($table)) {
       throw new Exception('Nome da tabela não é string');
     }
@@ -407,7 +407,7 @@ class Database {
     return $this->query;
   }
 
-  public function update($table, $items, $escape = TRUE) {
+  public function update($table, $items, $escape = FALSE) {
     if(!is_string($table)) {
       throw new Exception('Nome da tabela não é string');
     }
@@ -430,7 +430,7 @@ class Database {
     return $this->query;
   }
 
-  public function query($query, $escape = TRUE) {
+  public function query($query, $escape = FALSE) {
     $escape = (!is_bool($escape)) ? TRUE : $escape;
     if($escape) {
       $query = $this->escape_string($query);

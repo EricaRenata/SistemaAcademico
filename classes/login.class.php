@@ -1,6 +1,6 @@
 <?php
 Class LoginUsuario extends Funcoes {
-	
+
 	public function verificaLogin ($matricula, $senha){
 		$aluno = $this->verificaAluno($matricula, $senha);
 		$profissional = $this->verificaProfissional($matricula, $senha);
@@ -45,7 +45,7 @@ Class LoginUsuario extends Funcoes {
 		$_SESSION['logado'] = true;
 		$_SESSION['cd_usuario'] = $dados->cd_usuario;
 		$_SESSION['cd_prof'] = (isset($dados->cd_prof)) ? $dados->cd_prof : false;
-		$_SESSION['nome'] = $dados->razao_social;	
-		$_SESSION['super'] = (isset($dados->cd_admin)) ? $dados->cd_admin : false;	
+		$_SESSION['nome'] = $dados->razao_social;
+		$_SESSION['super'] = (isset($dados->cd_admin)) ? $dados->cd_admin : false;
 	}
 }
