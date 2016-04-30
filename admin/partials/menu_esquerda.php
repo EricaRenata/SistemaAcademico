@@ -41,61 +41,9 @@
               </li>
 
           <?php endforeach; ?>
-
-        </ul>
-          <!-- <li>
-            <a href="#"><span class="glyphicon glyphicon-modal-window"></span> Administrador</a>
-            <ul class="nav nav-third-level">
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 1</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 2</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 3</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 4</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#"><span class="glyphicon glyphicon-modal-window"></span> Professor</a>
-            <ul class="nav nav-third-level">
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 1</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 2</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 3</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 4</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="addAluno.php"><span class="glyphicon glyphicon-modal-window"></span> Aluno</a>
-            <ul class="nav nav-third-level">
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 1</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 2</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 3</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Módulo 4</a>
-              </li>
-            </ul>
           </li>
         </ul>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </div>
