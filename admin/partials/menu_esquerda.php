@@ -18,12 +18,30 @@
             $objetoModulos = new Database();
             $objetoModulos1 = new Database();
             $modulos = $objetoModulos->query("select * from cad_modulo")->result();
-            foreach ($modulos as $modulo) :
-          ?>
+            $submodulos = $objetoModulos1->query("select * from cad_submodulo")->result();
+            foreach ($modulos as $modulo) {
+              foreach ($submodulos as $submodulo) {
+                if($modulo->cd_modulo == $submodulo->cd_modulo) {
+                  $modulo->submodulos[] = $submodulo;
+                }
+              }
+            }
+            foreach ($modulos as $modulo) : ?>
               <li>
                 <a href="#"><span class="glyphicon glyphicon-modal-window"></span> <?= $modulo->nome_modulo; ?></a>
+                <?php if(isset($modulo->submodulos) && count($modulo->submodulos)) : ?>
+                  <ul class="nav nav-third-level">
+                  <?php foreach ($modulo->submodulos as $submodulo) : ?>
+                    <li>
+                      <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span><?= $submodulo->nome_submodulo; ?></a>
+                    </li>
+                    <?php endforeach; ?>
+                  </ul>
+                <?php endif; ?>
               </li>
+
           <?php endforeach; ?>
+
         </ul>
           <!-- <li>
             <a href="#"><span class="glyphicon glyphicon-modal-window"></span> Administrador</a>
@@ -78,6 +96,6 @@
           </li>
         </ul>
       </li>
-    </ul>-->
+    </ul>
   </div>
 </div>
