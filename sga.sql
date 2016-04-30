@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Abr-2016 às 17:52
+-- Generation Time: 01-Maio-2016 às 01:03
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -252,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `cad_submodulo` (
 INSERT INTO `cad_submodulo` (`cd_submodulo`, `cd_modulo`, `nome_submodulo`, `fonte`, `permissao`) VALUES
 (1, 1, 'Adiciona Horario', '', 1),
 (2, 1, 'Adiciona Turma', 'addTurma.php', 1),
-(3, 1, 'Adiciona Notícia', 'addNoticias', 1),
+(3, 1, 'Adiciona Notícia', 'addNoticias.php', 1),
 (4, 1, 'Adiciona Aluno', 'addAluno.php', 1),
 (5, 1, 'Adiciona Submodulo', '', 1),
 (6, 1, 'Adiciona Disciplina ', '', 1);
