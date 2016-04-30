@@ -13,7 +13,7 @@
         $submodulos = $objetoModulos1->query("select * from cad_submodulo where permissao = 1")->result();
         foreach ($submodulos as $submodulo) : ?>
          <div class="col-sm-6 col-md-3">
-            <a href="addAluno.php" class="thumbnail modulos">
+            <a href="<?= $submodulo->fonte; ?>" class="thumbnail modulos">
               <span class="glyphicon glyphicon-user"></span>
               <h4><?= $submodulo->nome_submodulo; ?></h4>
             </a>
