@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Abr-2016 às 16:38
+-- Generation Time: 30-Abr-2016 às 17:52
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -175,18 +175,17 @@ INSERT INTO `cad_horario` (`horario_inicial`, `observacao`, `cd_curso`, `cd_hora
 
 CREATE TABLE IF NOT EXISTS `cad_modulo` (
   `cd_modulo` bigint(20) NOT NULL,
-  `nome_modulo` varchar(180) NOT NULL,
-  `permissao` int(11) NOT NULL
+  `nome_modulo` varchar(180) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cad_modulo`
 --
 
-INSERT INTO `cad_modulo` (`cd_modulo`, `nome_modulo`, `permissao`) VALUES
-(1, 'Administrador', 1),
-(2, 'Professor', 2),
-(3, 'Aluno', 3);
+INSERT INTO `cad_modulo` (`cd_modulo`, `nome_modulo`) VALUES
+(1, 'Administrador'),
+(2, 'Professor'),
+(3, 'Aluno');
 
 -- --------------------------------------------------------
 
@@ -241,20 +240,22 @@ INSERT INTO `cad_prof` (`cd_prof`, `cd_usuario`, `razao_social`) VALUES
 CREATE TABLE IF NOT EXISTS `cad_submodulo` (
   `cd_submodulo` bigint(20) NOT NULL,
   `cd_modulo` bigint(20) NOT NULL,
-  `nome_submodulo` varchar(180) NOT NULL
+  `nome_submodulo` varchar(180) NOT NULL,
+  `fonte` varchar(450) NOT NULL,
+  `permissao` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cad_submodulo`
 --
 
-INSERT INTO `cad_submodulo` (`cd_submodulo`, `cd_modulo`, `nome_submodulo`) VALUES
-(1, 1, 'Adiciona Horario'),
-(2, 1, 'Adiciona Turma'),
-(3, 1, 'Adiciona Notícia'),
-(4, 1, 'Adiciona Aluno'),
-(5, 1, 'Adiciona Submodulo'),
-(6, 1, 'Adiciona Disciplina ');
+INSERT INTO `cad_submodulo` (`cd_submodulo`, `cd_modulo`, `nome_submodulo`, `fonte`, `permissao`) VALUES
+(1, 1, 'Adiciona Horario', '', 1),
+(2, 1, 'Adiciona Turma', 'addTurma.php', 1),
+(3, 1, 'Adiciona Notícia', 'addNoticias', 1),
+(4, 1, 'Adiciona Aluno', 'addAluno.php', 1),
+(5, 1, 'Adiciona Submodulo', '', 1),
+(6, 1, 'Adiciona Disciplina ', '', 1);
 
 -- --------------------------------------------------------
 

@@ -1,12 +1,25 @@
-<?php  
+<?php
   include '../classes/funcoes.class.php';
-  include '../classes/aluno.class.php'; 
+  include '../classes/aluno.class.php';
   Funcoes::geraHeader();
   Funcoes::geraMenus();
 ?>
   <div class="row margin-top">
-    <?php if($_SESSION['super'] == true || $_SESSION['super'] == 1) : ?>
-      <div class="col-sm-6 col-md-3">
+    <?php
+
+    if($_SESSION['super'] == true || $_SESSION['super'] == 1) : ?>
+      <?php
+        $objetoModulos1 = new Database();
+        $submodulos = $objetoModulos1->query("select * from cad_submodulo where permissao = 1")->result();
+        foreach ($submodulos as $submodulo) : ?>
+         <div class="col-sm-6 col-md-3">
+            <a href="addAluno.php" class="thumbnail modulos">
+              <span class="glyphicon glyphicon-user"></span>
+              <h4><?= $submodulo->nome_submodulo; ?></h4>
+            </a>
+          </div>
+      <?php endforeach; ?>
+      <!-- <div class="col-sm-6 col-md-3">
         <a href="addAluno.php" class="thumbnail modulos">
           <span class="glyphicon glyphicon-user"></span>
           <h4>Adicionar Aluno</h4>
@@ -31,7 +44,7 @@
         </a>
       </div>
     <?php endif; ?>
-    <div class="col-sm-6 col-md-3">
+    <!-- <div class="col-sm-6 col-md-3">
       <a href="addArquivo.php" class="thumbnail modulos">
         <span class="glyphicon glyphicon-folder-open"></span>
         <h4>Material Aula </h4>
@@ -42,8 +55,8 @@
         <span class="glyphicon glyphicon-folder-open"></span>
         <h4>Baixar Materiais</h4>
       </a>
-    </div>
-    <?php if(isset($_SESSION['cd_prof'])) : ?>
+    </div> -->
+    <!-- <?php if(isset($_SESSION['cd_prof'])) : ?>
       <div class="col-sm-6 col-md-3">
         <a href='addNotas.php' class="thumbnail modulos">
           <span class="glyphicon glyphicon-list-alt"></span>
@@ -88,6 +101,6 @@
           <h4>Disciplinas</h4>
         </a>
       </div>
-    <?php endif ?>
+    <?php endif ?> -->
   </div>
  <?php Funcoes::geraFooter(); ?>
