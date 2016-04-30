@@ -13,6 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
        }
     });
   }
+  if ("createEvent" in document) {
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent("change", false, true);
+    element.dispatchEvent(evt);
+}
+else{
+  element.fireEvent("onchange");
+
+} 
+  document.getElementByName('cd_curso')[0].change();
+
 });
 
 function verificaValor(elemento) {
