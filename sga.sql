@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Maio-2016 às 03:57
+-- Generation Time: 01-Maio-2016 às 06:08
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -120,17 +120,18 @@ INSERT INTO `cad_curso` (`cd_curso`, `desc_curso`, `periodo_inicial`, `cd_prof`,
 
 CREATE TABLE IF NOT EXISTS `cad_disciplina` (
   `cd_curso` bigint(20) NOT NULL,
-  `nome_disciplina` text NOT NULL,
-  `desc_disciplina` varchar(300) NOT NULL,
+  `nome_disciplina` varchar(300) NOT NULL,
+  `desc_disciplina` text NOT NULL,
   `cd_disciplina` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cad_disciplina`
 --
 
 INSERT INTO `cad_disciplina` (`cd_curso`, `nome_disciplina`, `desc_disciplina`, `cd_disciplina`) VALUES
-(1, 'Programacao 1', 'Desc', 1);
+(1, 'Programacao 1', 'Descricao do curso', 1),
+(1, 'eliseu', 'lul ', 2);
 
 -- --------------------------------------------------------
 
@@ -259,7 +260,7 @@ INSERT INTO `cad_submodulo` (`cd_submodulo`, `nome_submodulo`, `fonte`, `permiss
 (7, 'Add Material', 'addArquivo.php', '1,2', 'glyphicon-file'),
 (8, 'Adiciona Frequencia', 'addfrequencia.php', '1,2', 'glyphicon-list-alt'),
 (9, 'Ver Frequencia', 'verFrequencia.php', '1,2,3', 'glyphicon glyphicon-pencil'),
-(10, 'Ver Horário', 'verHorario.php', '1,2,3', 'glyphicon glyphicon-pencil'),
+(10, 'Ver Hor', 'verHorario.php', '1,2,3', 'glyphicon glyphicon-pencil'),
 (11, 'Ver Notas', 'verNotas.php', '1,2,3', 'glyphicon glyphicon-tasks'),
 (12, 'Ver Disciplina', 'verDisciplina.php', '1,2,3', 'glyphicon glyphicon-tasks');
 
@@ -518,7 +519,7 @@ ALTER TABLE `cad_curso`
 -- AUTO_INCREMENT for table `cad_disciplina`
 --
 ALTER TABLE `cad_disciplina`
-  MODIFY `cd_disciplina` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `cd_disciplina` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `cad_horario`
 --
