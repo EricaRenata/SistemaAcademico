@@ -27,7 +27,7 @@ class Frequencia extends Funcoes {
 
   public function getFrequencia($cd_turma) {
     $objetoSql = new Database();
-    $result = $objetoSql->query('select * from cadaluno left join frequencia using(cd_aluno) where cadaluno.cd_turma = '.$cd_turma.' AND DATE(data) = CURDATE()')->result();
+    $result = $objetoSql->query('select * from cadaluno left join frequencia using(cd_aluno) where cadaluno.cd_turma = '.$cd_turma.'')->result();
     return $result;
   }
 
