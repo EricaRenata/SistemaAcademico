@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Maio-2016 às 06:08
+-- Generation Time: 01-Maio-2016 às 07:19
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `cad_disciplina` (
   `nome_disciplina` varchar(300) NOT NULL,
   `desc_disciplina` text NOT NULL,
   `cd_disciplina` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cad_disciplina`
@@ -131,7 +131,8 @@ CREATE TABLE IF NOT EXISTS `cad_disciplina` (
 
 INSERT INTO `cad_disciplina` (`cd_curso`, `nome_disciplina`, `desc_disciplina`, `cd_disciplina`) VALUES
 (1, 'Programacao 1', 'Descricao do curso', 1),
-(1, 'eliseu', 'lul ', 2);
+(1, 'eliseu', 'lul ', 2),
+(1, '878', ' ', 3);
 
 -- --------------------------------------------------------
 
@@ -244,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `cad_submodulo` (
   `fonte` varchar(450) NOT NULL,
   `permissao` varchar(11) NOT NULL,
   `icone` varchar(180) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cad_submodulo`
@@ -260,9 +261,10 @@ INSERT INTO `cad_submodulo` (`cd_submodulo`, `nome_submodulo`, `fonte`, `permiss
 (7, 'Add Material', 'addArquivo.php', '1,2', 'glyphicon-file'),
 (8, 'Adiciona Frequencia', 'addfrequencia.php', '1,2', 'glyphicon-list-alt'),
 (9, 'Ver Frequencia', 'verFrequencia.php', '1,2,3', 'glyphicon glyphicon-pencil'),
-(10, 'Ver Hor', 'verHorario.php', '1,2,3', 'glyphicon glyphicon-pencil'),
+(10, 'Ver Horário', 'verHorario.php', '1,2,3', 'glyphicon glyphicon-pencil'),
 (11, 'Ver Notas', 'verNotas.php', '1,2,3', 'glyphicon glyphicon-tasks'),
-(12, 'Ver Disciplina', 'verDisciplina.php', '1,2,3', 'glyphicon glyphicon-tasks');
+(12, 'Ver Disciplina', 'verDisciplina.php', '1,2,3', 'glyphicon glyphicon-tasks'),
+(13, 'Mensagens', 'mensagens.php', '1,2,3', 'glyphicon glyphicon-envelope');
 
 -- --------------------------------------------------------
 
@@ -297,6 +299,22 @@ CREATE TABLE IF NOT EXISTS `frequencia` (
   `presenca` tinyint(1) NOT NULL,
   `data` date NOT NULL,
   `cd_curso` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `mensagens`
+--
+
+CREATE TABLE IF NOT EXISTS `mensagens` (
+  `cd_mensagem` bigint(20) NOT NULL,
+  `cd_de` varchar(180) NOT NULL,
+  `cd_para` varchar(180) NOT NULL,
+  `assunto` text NOT NULL,
+  `desc_mensagm` text NOT NULL,
+  `dt_env` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `dt_receb` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -474,6 +492,12 @@ ALTER TABLE `frequencia`
   ADD PRIMARY KEY (`cd_frequencia`);
 
 --
+-- Indexes for table `mensagens`
+--
+ALTER TABLE `mensagens`
+  ADD PRIMARY KEY (`cd_mensagem`);
+
+--
 -- Indexes for table `noticias`
 --
 ALTER TABLE `noticias`
@@ -519,7 +543,7 @@ ALTER TABLE `cad_curso`
 -- AUTO_INCREMENT for table `cad_disciplina`
 --
 ALTER TABLE `cad_disciplina`
-  MODIFY `cd_disciplina` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `cd_disciplina` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `cad_horario`
 --
@@ -544,7 +568,7 @@ ALTER TABLE `cad_prof`
 -- AUTO_INCREMENT for table `cad_submodulo`
 --
 ALTER TABLE `cad_submodulo`
-  MODIFY `cd_submodulo` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `cd_submodulo` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `cad_turma`
 --
@@ -555,6 +579,11 @@ ALTER TABLE `cad_turma`
 --
 ALTER TABLE `frequencia`
   MODIFY `cd_frequencia` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `mensagens`
+--
+ALTER TABLE `mensagens`
+  MODIFY `cd_mensagem` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `noticias`
 --

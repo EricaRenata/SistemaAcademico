@@ -10,6 +10,7 @@
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
   <link href="../assets/css/admin.css" rel="stylesheet">
+  <link href="../assets/css/mensagens.css" rel="stylesheet">
 </head>
 <body data-alert="<?= (isset($_SESSION['mensagem'])) ? $_SESSION['mensagem'] : ''; ?>">
 <?php

@@ -359,7 +359,7 @@ class Database {
     $data = array();
     if(!empty($this->query)) {
       while($result = mysqli_fetch_object($this->query)) {
-        $data[] = $result;
+        $data[] = (Object) array_map("utf8_encode", (Array) $result);
       }
       $this->clearAttributes();
     }

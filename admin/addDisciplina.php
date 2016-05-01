@@ -30,12 +30,12 @@
     <div class="col-md-6">
       <div class="form-group has-success">
         <label class="control-label" for="inputSuccess1">Disciplina:</label>
-        <input type="text" class="form-control" id="inputSuccess1" value="" placeholder="Disciplina" name="nome_disciplina" aria-describedby="helpBlock2">
+        <input type="text" class="form-control" id="inputSuccess1" required="required" value="" placeholder="Disciplina" name="nome_disciplina" aria-describedby="helpBlock2">
       </div>
     </div>
     <div class="col-md-12">
       <label class="control-label" for="inputError1">Descrição da Disciplina:</label>
-      <textarea class="form-control" rows="10" name="desc_disciplina"> </textarea>
+      <textarea class="form-control" rows="10" name="desc_disciplina" required="required"> </textarea>
     </div>
     <div class="col-md-3 margin-10">
       <button type"submit" value="Salvar" name="acao" class="btn btn-primary form-control">Salvar</button>

@@ -20,7 +20,7 @@
             $permissoes = $_SESSION['permissao'];
             $query_parts = array();
             foreach ($permissoes as $val) {
-              $query_parts[] = "'%".mysql_real_escape_string($val)."%'";
+              $query_parts[] = "'%".$val."%'";
             }
 
             $string = implode(' OR cd_modulo LIKE ', $query_parts);
@@ -28,7 +28,7 @@
             $modulos = $objetoModulos->query("select * from cad_modulo where cd_modulo LIKE {$string}")->result();
             $query_parts = array();
             foreach ($permissoes as $val) {
-                $query_parts[] = "'%".mysql_real_escape_string($val)."%'";
+                $query_parts[] = "'%".$val."%'";
             }
 
             $string = implode(' OR permissao LIKE ', $query_parts);
