@@ -32,25 +32,14 @@
           <input type="text" class="form-control" id="inputSuccess1" value="" placeholder="Titulo da Noticia" name="tit_noticia" aria-describedby="helpBlock2">
         </div>
       </div>
-      <div class="col-md-5">
-        <div class="form-group has-success">
-          <label class="control-label" for="inputWarning1">Posição</label>
-          <select class="form-control" name="posicao" placeholder="Posição">
-            <option value="1">1</option>
-            <option value="2">1</option>
-            <option value="3">2</option>
-            <option value="4">2</option>
-          </select>
-        </div>
-      </div>
       <div class="col-md-4">
         <div class="form-group has-success">
           <label class="control-label" for="inputError1">Categoria</label>
            <select class="form-control" name="categoria" placeholder="Categoria">
             <option value="1">Vagas </option>
             <option value="2">Cursos</option>
-            <option value="3"></option>
-            <option value="4">2,5</option>
+            <option value="3">Extra</option>
+            <option value="4">Urgente</option>
           </select>
         </div>
       </div>
