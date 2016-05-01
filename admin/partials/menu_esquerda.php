@@ -20,7 +20,7 @@
             $permissoes = $_SESSION['permissao'];
             $query_parts = array();
             foreach ($permissoes as $val) {
-                $query_parts[] = "'%".mysql_real_escape_string($val)."%'";
+              $query_parts[] = "'%".mysql_real_escape_string($val)."%'";
             }
 
             $string = implode(' OR cd_modulo LIKE ', $query_parts);
@@ -48,7 +48,7 @@
                   <ul class="nav nav-third-level">
                   <?php foreach ($modulo->submodulos as $submodulo) : ?>
                     <li>
-                      <a href="#"><span class="glyphicon glyphicon-option-horizontal"></span><?= $submodulo->nome_submodulo; ?></a>
+                      <a href="<?= $submodulo->fonte; ?>"><span class="glyphicon glyphicon-option-horizontal"></span><?= $submodulo->nome_submodulo; ?></a>
                     </li>
                     <?php endforeach; ?>
                   </ul>
