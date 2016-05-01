@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Maio-2016 às 07:19
+-- Generation Time: 01-Maio-2016 às 07:51
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -330,17 +330,19 @@ CREATE TABLE IF NOT EXISTS `noticias` (
   `cd_noticias` bigint(20) NOT NULL,
   `permissao` varchar(1) NOT NULL,
   `posicao` varchar(10) NOT NULL,
-  `categoria` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+  `categoria` varchar(20) NOT NULL,
+  `foto` varchar(300) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `noticias`
 --
 
-INSERT INTO `noticias` (`tit_noticia`, `desc_noticia`, `imagem`, `cd_noticias`, `permissao`, `posicao`, `categoria`) VALUES
-('InscriÃ§Ãµes Abertas', 'As inscriÃ§Ãµes para cursos tÃ©cnicos iniciam dia 22/04/2016', NULL, 6, '1', '1', '1'),
-('Pronatec', 'Encontra-se disponÃ­vel o edital do Pronatec.', NULL, 7, '1', '3', '2'),
-('OlimpÃ­ada ', 'Entre no site do SENAI e tenha acesso a cobertura da OlimpÃ­ada do Conhecimento.', NULL, 8, '1', '1', '3');
+INSERT INTO `noticias` (`tit_noticia`, `desc_noticia`, `imagem`, `cd_noticias`, `permissao`, `posicao`, `categoria`, `foto`) VALUES
+('InscriÃ§Ãµes Abertas', 'As inscriÃ§Ãµes para cursos tÃ©cnicos iniciam dia 22/04/2016', NULL, 6, '1', '1', '1', ''),
+('Pronatec', 'Encontra-se disponÃ­vel o edital do Pronatec.', NULL, 7, '1', '3', '2', ''),
+('OlimpÃ­ada ', 'Entre no site do SENAI e tenha acesso a cobertura da OlimpÃ­ada do Conhecimento.', NULL, 8, '1', '1', '3', ''),
+('Te Amo Renata', ' Tudo funcionou corretamente. ', NULL, 9, '3', '1', '1', 'amor.jpg');
 
 -- --------------------------------------------------------
 
@@ -588,7 +590,7 @@ ALTER TABLE `mensagens`
 -- AUTO_INCREMENT for table `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `cd_noticias` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `cd_noticias` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `notificacoes`
 --
