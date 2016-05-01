@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Maio-2016 às 07:51
+-- Generation Time: 01-Maio-2016 às 09:28
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -297,9 +297,20 @@ CREATE TABLE IF NOT EXISTS `frequencia` (
   `cd_frequencia` bigint(20) NOT NULL,
   `cd_aluno` bigint(20) NOT NULL,
   `presenca` tinyint(1) NOT NULL,
-  `data` date NOT NULL,
+  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `cd_curso` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `frequencia`
+--
+
+INSERT INTO `frequencia` (`cd_frequencia`, `cd_aluno`, `presenca`, `data`, `cd_curso`) VALUES
+(2, 1, 0, '2016-05-01 06:45:45', 1),
+(3, 34, 0, '2016-05-01 06:45:45', 1),
+(4, 35, 0, '2016-05-01 06:45:45', 1),
+(5, 36, 0, '2016-05-01 06:45:45', 1),
+(6, 37, 0, '2016-05-01 06:45:45', 1);
 
 -- --------------------------------------------------------
 
@@ -580,7 +591,7 @@ ALTER TABLE `cad_turma`
 -- AUTO_INCREMENT for table `frequencia`
 --
 ALTER TABLE `frequencia`
-  MODIFY `cd_frequencia` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `cd_frequencia` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `mensagens`
 --

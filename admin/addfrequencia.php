@@ -1,11 +1,13 @@
-<?php 
-  include '../classes/funcoes.class.php';  
+<?php
+  include '../classes/funcoes.class.php';
   include '../classes/frequencia.class.php';
-  include '../classes/curso.class.php'; 
+  include '../classes/curso.class.php';
+  include '../classes/turma.class.php';
   Funcoes::geraHeader();
   Funcoes::geraMenus();
   $dados = (Object) $_POST;
   $cd_curso = (isset($dados->cd_curso)) ? $dados->cd_curso : null;
+  $cd_turma = (isset($dados->cd_turma)) ? $dados->cd_turma : null;
 ?>
 <div>
   <ul class="nav nav-tabs" role="tablist">
@@ -13,11 +15,11 @@
   </ul>
 
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane <?= (!isset($dados->acao)) ? 'active' : ''; ?>" id="home">
+    <div role="tabpanel" class="tab-pane <?= (!isset($dados->acao) || $dados->acao == 'salvaF') ? 'active' : ''; ?>" id="home">
 	    <form method="POST" action="addfrequencia.php" name="consulta">
 		    <div class="form-group">
 			    <label for="exampleInputEmail1">Selecione o curso</label>
-			    <select class="form-control" name="cd_curso" >
+			    <select class="form-control" name="cd_curso" onchange="submit()">
 						<?php
               $objetoCurso = new Curso();
                 $listaCurso = $objetoCurso->getCursos();
@@ -25,16 +27,38 @@
                   if($dados->cd_curso == $curso->cd_curso) :
             ?>
                     <option value="<?= $curso->cd_curso ?>" selected><?= $curso->nome_curso; ?></option>
-            <?php 
+            <?php
                   else :
             ?>
                   <option value="<?= $curso->cd_curso ?>"><?= $curso->nome_curso; ?></option>
-            <?php 
-                  endif; 
-                endforeach; 
+            <?php
+                  endif;
+                endforeach;
             ?>
 					</select>
 		  	</div>
+        <div class="form-group">
+          <label class="control-label" for="inputWarning1">Turma</label>
+          <select class="form-control" name="cd_turma">
+              <?php
+              if(isset($cd_curso) && $cd_curso) :
+              $objetoTurma = new Turma();
+                $listaTurma = $objetoTurma->getTurmasPorCurso($cd_curso);
+                foreach ($listaTurma as $turma) :
+                  if($dados->cd_turma == $turma->cd_turma) :
+            ?>
+                    <option value="<?= $turma->cd_turma ?>" selected><?= $turma->cd_turma . ' - ' . $turma->turno; ?></option>
+            <?php
+                  else :
+            ?>
+                  <option value="<?= $turma->cd_turma ?>"><?= $turma->cd_turma . ' - '. $turma->turno; ?></option>
+            <?php
+                  endif;
+                endforeach;
+                  endif;
+            ?>
+          </select>
+        </div>
 		  	<input class="btn btn-primary btn-sm" name="acao" type="submit" value="Cadastrar">
 	    </form>
     </div>
@@ -43,23 +67,23 @@
 			<?php
         $data = date("d/m/Y");
         $objetoFrequencia = new Frequencia();
-        $alunos = $objetoFrequencia->getFrequencia($cd_curso);
+        $alunos = $objetoFrequencia->getFrequencia($cd_turma);
 				if(isset($dados->acao) && $dados->acao == 'salvaF') {
 					$objetoFrequencia->setFrequencia($dados);
 				}
 			?>
-			<form method="post" action="addfrequencia.php" name="lista">	
+			<form method="post" action="addfrequencia.php" name="lista">
 			<input type="hidden" value="salvaF" name="acao" class="salvaf">
 			<h3>Registro de chamada do dia: <?= $data; ?><span id="salva-freq" class="salva-frequencia glyphicon glyphicon-floppy-saved pull-right"></span></h3>
-			<table class="table table-hover"> 
-				<thead> 
-					<tr> 
-						<th class="text-center">Matricula</th> 
-						<th class="text-center">Aluno</th> 
-						<th class="text-center">Status</th> 
-					</tr> 
-					</thead> 
-					<tbody> 
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th class="text-center">Matricula</th>
+						<th class="text-center">Aluno</th>
+						<th class="text-center">Status</th>
+					</tr>
+					</thead>
+					<tbody>
 						<?php foreach ($alunos as $aluno) : ?>
 							<tr class="<?= ($aluno->presenca == 1) ? 'success' : ''; ?>">
 								<input type="hidden" value="<?= $cd_curso; ?>" name="cd_curso">
@@ -72,7 +96,7 @@
 								<td class="text-center"><span class="presente glyphicon <?= ($aluno->presenca == 1) ? 'glyphicon-ok' : 'glyphicon-thumbs-up'; ?>" <?= ($aluno->presenca == 1) ? 'style="color: green;"' : ''; ?>></span></td>
 		 					</tr>
 						<?php endforeach; ?>
-					</tbody> 
+					</tbody>
 			</table>
 
 			</form>

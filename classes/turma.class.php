@@ -13,7 +13,7 @@ Class Turma extends Funcoes {
       'turno' => $itens['turno']
     );
     $objetoSql->insert('cad_turma', $turma);
-    for ($i=0; $i < count($itens["alunos"]); $i++) { 
+    for ($i=0; $i < count($itens["alunos"]); $i++) {
       $objetoSql2->query('update cadaluno set cd_turma = '.$itens["cd_turma"].' where cd_aluno = '.$itens["alunos"][$i].'');
     }
 
@@ -26,6 +26,12 @@ Class Turma extends Funcoes {
     	'desc_notificacao' => 'Turma '.  $descricao->desc_curso . ' adicionado por '.$_SESSION['nome'].''
   	);
     $objetoSql1->insert('notificacoes', $notificacao);
+  }
+
+   public function getTurmasPorCurso($cd_curso) {
+    $objetoSql = new Database();
+    $result = $objetoSql->query('select * from cad_turma where cd_curso = '.$cd_curso.'')->result();
+    return $result;
   }
 
   public function getTurmas() {

@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	var countElementos = elementos.length;
 	for (var i = 0; i < countElementos; i++) {
 		elementos[i].addEventListener('click', function() {
-      this.closest('tr').children[3].value = true;
+      var presenca = this.closest('tr').children[3].value;
+      this.closest('tr').children[3].value = (presenca == 1) ? 0 : 1;
       if(!this.classList.contains('glyphicon-ok')) {
         this.classList.remove('glyphicon-thumbs-up');
         this.classList.add('glyphicon-ok');

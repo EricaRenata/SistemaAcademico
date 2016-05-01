@@ -8,10 +8,11 @@ class Frequencia extends Funcoes {
 	    if(is_array($alunos)) {
         $verifica = $this->verificaFrequencia($alunos['cd_curso'], $alunos['cd_aluno'], $alunos['data']);
        if(count($verifica)) {
-         echo 'existe';
+        $presenca = (!$alunos["presenca"]) ? 0 : 1;
+         $objetoSql->query('UPDATE frequencia SET presenca = '.$presenca.' where cd_aluno = '.$alunos["cd_aluno"]. ' AND DATE(data) = CURDATE()');
        }else {
         $presenca = (!$alunos["presenca"]) ? '0' : '1';
-         $objetoSql->query("INSERT INTO frequencia (cd_curso, cd_aluno, presenca) VALUES ({$alunos["cd_curso"]}, {$alunos["cd_aluno"]},{$presenca},".$alunos["data"].")");
+         $objetoSql->query('INSERT INTO frequencia (cd_curso, cd_aluno, presenca) VALUES ('.$alunos["cd_curso"].', '.$alunos["cd_aluno"].','.$presenca.')');
        }
       }
 
@@ -20,14 +21,13 @@ class Frequencia extends Funcoes {
 
   public function verificaFrequencia($cd_curso, $cd_aluno, $data) {
     $objetoSql = new Database();
-    echo 'SELECT * FROM frequencia where cd_aluno = '.$cd_aluno.' AND cd_curso = '.$cd_curso.'';
-    // $verifica = $objetoSql->query('SELECT * FROM frequencia where cd_aluno = {$cd_aluno} AND cd_curso = $cd_curso')->result();
+    $verifica = $objetoSql->query('SELECT * FROM frequencia where cd_aluno = '.$cd_aluno.' AND cd_curso = '.$cd_curso.'')->result();
     return $verifica;
   }
 
-  public function getFrequencia($cd_curso) {
+  public function getFrequencia($cd_turma) {
     $objetoSql = new Database();
-    $result = $objetoSql->query('select * from cadaluno left join frequencia using(cd_aluno) where cadaluno.cd_curso = '.$cd_curso.'')->result();
+    $result = $objetoSql->query('select * from cadaluno left join frequencia using(cd_aluno) where cadaluno.cd_turma = '.$cd_turma.' AND DATE(data) = CURDATE()')->result();
     return $result;
   }
 
