@@ -8,7 +8,7 @@ Class Noticia extends Funcoes {
 
   public function getNoticias() {
     $objetoSql = new Database();
-    $resultado = $objetoSql->query('select * from noticias order by cd_noticias DESC limit 3')->result(); 
+    $resultado = $objetoSql->query('select * from noticias order by cd_noticias DESC limit 3')->result();
     if(count($resultado) > 0) {
       return $resultado;
     }else {
@@ -21,7 +21,7 @@ Class Noticia extends Funcoes {
     foreach ($noticias as $itens) { ?>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="assets/imagens/news2.gif" alt="...">
+          <img src="<?= (isset($itens->foto) && $itens->foto != '') ? 'uploads/noticias/'.$itens->foto : 'assets/imagens/news2.gif'; ?> " alt="...">
           <div class="caption">
             <h3><?= $itens->tit_noticia;?></h3>
             <p><?= $itens->desc_noticia;?></p>

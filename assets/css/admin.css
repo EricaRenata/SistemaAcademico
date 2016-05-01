@@ -80,6 +80,11 @@ a:hover, a:visited, a:link, a:active {
   height: 154px;
 }
 
+.img-thumbnail:hover {
+  background-color: #E1E0FD;
+  cursor: pointer;
+}
+
 @media print {
   .imprimi-notas, .labelcurso, .breadcrumb{
     display: none;

@@ -1,7 +1,7 @@
 
-<?php 
+<?php
   include '../classes/funcoes.class.php';
-  include '../classes/noticia.class.php'; 
+  include '../classes/noticia.class.php';
   Funcoes::geraHeader();
   Funcoes::geraMenus();
   $dados = (Object) $_POST;
@@ -12,14 +12,19 @@
     $itens['categoria']   = (isset($dados->categoria)) ? $dados->categoria : null;
     $itens['permissao']     = (isset($dados->permissao)) ? $dados->permissao : null;
     $itens['desc_noticia']     = (isset($dados->desc_noticia)) ? $dados->desc_noticia : null;
-    $objetoNoticia = new Noticia(); 
-    $objetoNoticia->gravaNoticia($itens);
+    $itens['foto']     = $_FILES['arquivo']['name'];
+    $novaPasta = '../uploads/noticias/'.basename($_FILES['arquivo']['name']);
+    $objetoNoticia = new Noticia();
+    if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $novaPasta)) {
+      $objetoNoticia->gravaNoticia($itens);
+    }
   }
 ?>
-  <form action="addNoticias.php" method="post">
+  <form action="addNoticias.php" method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md-3">
-        <img src="../assets/imagens/img.svg" alt="" class="img-thumbnail">
+        <input type="file" id="noticia" name="arquivo" style="display: none;" />
+        <img src="../assets/imagens/img.svg" alt="" class="img-thumbnail foto-noticia">
       </div>
       <div class="col-md-4">
         <div class="form-group has-success">
@@ -59,7 +64,7 @@
             <option value="4">Todos</option>
           </select>
         </div>
-      </div>  
+      </div>
     <div class="row margin-10">
       <div class="col-md-12">
         <div>

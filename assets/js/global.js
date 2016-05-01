@@ -56,6 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		$('#foto').trigger('click');
 	});
 
+	$('.foto-noticia').click(function() {
+		$('#noticia').trigger('click');
+	});
+
 });
 
 
