@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Maio-2016 às 01:03
+-- Generation Time: 01-Maio-2016 às 03:57
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -239,23 +239,29 @@ INSERT INTO `cad_prof` (`cd_prof`, `cd_usuario`, `razao_social`) VALUES
 
 CREATE TABLE IF NOT EXISTS `cad_submodulo` (
   `cd_submodulo` bigint(20) NOT NULL,
-  `cd_modulo` bigint(20) NOT NULL,
   `nome_submodulo` varchar(180) NOT NULL,
   `fonte` varchar(450) NOT NULL,
-  `permissao` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `permissao` varchar(11) NOT NULL,
+  `icone` varchar(180) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cad_submodulo`
 --
 
-INSERT INTO `cad_submodulo` (`cd_submodulo`, `cd_modulo`, `nome_submodulo`, `fonte`, `permissao`) VALUES
-(1, 1, 'Adiciona Horario', '', 1),
-(2, 1, 'Adiciona Turma', 'addTurma.php', 1),
-(3, 1, 'Adiciona Notícia', 'addNoticias.php', 1),
-(4, 1, 'Adiciona Aluno', 'addAluno.php', 1),
-(5, 1, 'Adiciona Submodulo', '', 1),
-(6, 1, 'Adiciona Disciplina ', '', 1);
+INSERT INTO `cad_submodulo` (`cd_submodulo`, `nome_submodulo`, `fonte`, `permissao`, `icone`) VALUES
+(1, 'Adiciona Horario', 'addHorario.php', '1', 'glyphicon-calendar'),
+(2, 'Adiciona Turma', 'addTurma.php', '1', 'glyphicon-education'),
+(3, 'Adiciona Notícia', 'addNoticias.php', '1', 'glyphicon-globe'),
+(4, 'Adiciona Aluno', 'addAluno.php', '1', 'glyphicon-user'),
+(5, 'Adiciona Submodulo', '', '1', 'glyphicon-cog'),
+(6, 'Adiciona Disciplina ', 'addDisciplina.php', '1,2', 'glyphicon-qrcode'),
+(7, 'Add Material', 'addArquivo.php', '1,2', 'glyphicon-file'),
+(8, 'Adiciona Frequencia', 'addfrequencia.php', '1,2', 'glyphicon-list-alt'),
+(9, 'Ver Frequencia', 'verFrequencia.php', '1,2,3', 'glyphicon glyphicon-pencil'),
+(10, 'Ver Horário', 'verHorario.php', '1,2,3', 'glyphicon glyphicon-pencil'),
+(11, 'Ver Notas', 'verNotas.php', '1,2,3', 'glyphicon glyphicon-tasks'),
+(12, 'Ver Disciplina', 'verDisciplina.php', '1,2,3', 'glyphicon glyphicon-tasks');
 
 -- --------------------------------------------------------
 
@@ -537,7 +543,7 @@ ALTER TABLE `cad_prof`
 -- AUTO_INCREMENT for table `cad_submodulo`
 --
 ALTER TABLE `cad_submodulo`
-  MODIFY `cd_submodulo` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `cd_submodulo` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `cad_turma`
 --

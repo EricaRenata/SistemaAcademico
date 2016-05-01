@@ -7,10 +7,10 @@ Class LoginUsuario extends Funcoes {
 		$administrador = $this->verificaAdministrador($matricula, $senha);
 
 		if($aluno) {
-			$this->iniciaSessao($aluno, false, true);
+			$this->iniciaSessao($aluno);
 			header("Location: admin");
 		} else if($profissional) {
-			$this->iniciaSessao($profissional, true, false);
+			$this->iniciaSessao($profissional);
 			header("Location: admin");
 		} else if($administrador) {
 			$this->iniciaSessao($administrador);
@@ -43,9 +43,18 @@ Class LoginUsuario extends Funcoes {
 		session_start();
 		$_SESSION['login'] = $dados->login;
 		$_SESSION['logado'] = true;
+		$_SESSION['aluno'] = (!isset($dados->cd_admin) && (!isset($dados->cd_prof) || $dados->cd_prof == 0)) ? true : false;
 		$_SESSION['cd_usuario'] = $dados->cd_usuario;
 		$_SESSION['cd_prof'] = (isset($dados->cd_prof)) ? $dados->cd_prof : false;
 		$_SESSION['nome'] = $dados->razao_social;
 		$_SESSION['super'] = (isset($dados->cd_admin)) ? $dados->cd_admin : false;
+		if(isset($dados->cd_admin) && $dados->cd_admin) {
+			$permissao = array(1,2,3);
+		} else if(isset($dados->cd_prof) && $dados->cd_prof) {
+			$permissao = array(2,3);
+		} else {
+			$permissao = array(3);
+		}
+		$_SESSION['permissao'] = $permissao;
 	}
 }

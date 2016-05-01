@@ -1,13 +1,13 @@
-<?php 
+<?php
   include '../classes/funcoes.class.php';
   include '../classes/turma.class.php';
-  include '../classes/aluno.class.php'; 
+  include '../classes/aluno.class.php';
   Funcoes::geraHeader();
   Funcoes::geraMenus();
   $dados = (Object) $_POST;
 
   if(count($_POST) && $dados->acao == "Salvar") {
-    $objetoAluno = new Aluno(); 
+    $objetoAluno = new Aluno();
     $itens['matricula'] = (isset($dados->matricula)) ? (Int)$dados->matricula : null;
     $itens['cd_turma']     = (isset($dados->cd_turma)) ? (Int)$dados->cd_turma : null;
     $itens['usuario']   = (isset($dados->usuario)) ? $dados->usuario : null;
@@ -18,7 +18,8 @@
   <form action="addAluno.php" method="post">
     <div class="row">
       <div class="col-md-3">
-        <img src="../assets/imagens/img.svg" alt="" class="img-thumbnail">
+        <input type="file" id="foto" style="display: none;" />
+        <img src="../assets/imagens/img.svg" alt="" id="foto-aluno" class="img-thumbnail">
       </div>
       <div class="col-md-4">
         <div class="form-group has-success">
@@ -37,13 +38,13 @@
                   if($dados->cd_turma == $turma->cd_turma) :
             ?>
                     <option value="<?= $turma->cd_turma ?>" selected><?= $turma->cd_turma . ' - '. $turma->desc_curso . ' - '. $turma->turno; ?></option>
-            <?php 
+            <?php
                   else :
             ?>
                   <option value="<?= $turma->cd_turma ?>"><?= $turma->cd_turma . ' - '. $turma->desc_curso . ' - '. $turma->turno; ?></option>
-            <?php 
-                  endif; 
-                endforeach; 
+            <?php
+                  endif;
+                endforeach;
             ?>
           </select>
         </div>
@@ -59,7 +60,7 @@
           <label class="control-label" for="inputError1">Senha</label>
           <input type="password" value="" class="form-control" id="inputError1" name="senha">
         </div>
-      </div>  
+      </div>
     </div>
     <div class="row margin-10">
       <div class="col-md-3">

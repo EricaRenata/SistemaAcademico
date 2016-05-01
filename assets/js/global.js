@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
 						if(Object.keys(dados).length) {
 							insertNotificacao(dados);
 						}
-						
+
 					});
-					
+
 				}else {
 					tempo = 0;
 				}
-			} 
+			}
 			tempo = 3000;
 		});
 
@@ -36,17 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
 					};
 					ajax(obj, function(dados) {
 						if(Object.keys(dados).length) {
-							alert();	
+							alert();
 						}
 					});
-					
+
 				}else {
 					tempo = 0;
 				}
-			} 
+			}
 			tempo = 3000;
 		});
 	}, tempo);
+
+	$('#foto-aluno').click(function() {
+		$('#foto').trigger('click');
+	});
 
 });
 
