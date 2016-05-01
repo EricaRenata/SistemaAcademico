@@ -1,3 +1,7 @@
+var host = window.location.host;
+var baseUrl = 'http://';
+var baseUrl = (host.substring(0, 9) == 'localhost') ? baseUrl + host + '/' +
+window.location.pathname.split('/')[1] + '/' : baseUrl + host + '/';
 document.addEventListener('DOMContentLoaded', function() {
 	var tempo = 3000;
 	var countNotificacao = document.querySelectorAll('.list-group a.notificacao').length+1;
@@ -89,3 +93,18 @@ function serializeObject(obj) {
 	}
 	return data.join('&');
 }
+
+function callAjax(data, callback) {
+    var dados = (data.data != '' && data.data != undefined) ? data.data : null;
+    var ajax = $.ajax({
+      type : 'POST',
+      url : baseUrl + data.url,
+      dataType : data.tipo,
+      data: dados,
+      cache: false,
+      success: function(data) {
+        callback(data);
+      }
+    });
+    return ajax;
+  }
