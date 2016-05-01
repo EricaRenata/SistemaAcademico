@@ -34,6 +34,12 @@ Class Turma extends Funcoes {
     return $result;
   }
 
+  public function getTurmasPorAluno($cd_aluno) {
+    $objetoSql = new Database();
+    $result = $objetoSql->query('select   * from cad_turma inner join cad_curso using(cd_curso) inner join cadaluno using(cd_turma)')->result();
+    return $result;
+  }
+
   public function getTurmas() {
     $objetoSql = new Database();
     $result = $objetoSql->query('select * from cad_turma left join cad_curso using(cd_curso)')->result();

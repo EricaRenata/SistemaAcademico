@@ -2,6 +2,7 @@
   include '../classes/funcoes.class.php';  
   include '../classes/curso.class.php'; 
   include '../classes/disciplina.class.php'; 
+  include '../classes/turma.class.php'; 
   Funcoes::geraHeader();
   Funcoes::geraMenus();
   $dados = (Object) $_POST;
@@ -34,38 +35,47 @@
             ?>
 					</select>
 		  	</div>
-		<div class="form-group">
-		  	<label for="exampleInputEmail1">Selecione a Disciplina:</label>
-          <select class="form-control" name="cd_disciplina" onchange="submit()">
-            <option>Selecione a Disciplina</option>
-          <?php 
-
-            if(isset($dados->cd_curso) && $dados->cd_curso != 0) {
-              $objetoDisciplina = new Disciplina();
-              $listaDisciplina = $objetoDisciplina->getDisciplinas($dados->cd_curso);
-              foreach ($listaDisciplina as $disciplina) :
-                if($dados->cd_disciplina == $curso->cd_disciplina) : ?>
-                    <option value="<?= $curso->cd_curso ?>" selected><?= $disciplina->nome_disciplina; ?></option>
-          <?php else : ?>
-                  <option value="<?= $curso->cd_curso ?>"><?= $disciplina->nome_disciplina; ?></option>
-          <?php 
-                endif; 
-              endforeach; 
-            }
+        <div class="form-group">
+          <label class="control-label" for="inputWarning1">Turma</label>
+          <select class="form-control" name="cd_turma">
+            <?php
+              if(isset($dados->cd_curso) && $dados->cd_curso) :
+                $objetoTurma = new Turma();
+                $listaTurma = $objetoTurma->getTurmasPorCurso($dados->cd_curso);
+                foreach ($listaTurma as $turma) :
+                  if(isset($dados->cd_turma) && $dados->cd_turma == $turma->cd_turma) :
+            ?>
+                    <option value="<?= $turma->cd_turma ?>" selected><?= $turma->cd_turma . ' - ' . $turma->turno; ?></option>
+            <?php
+              else :
+            ?>
+              <option value="<?= $turma->cd_turma ?>"><?= $turma->cd_turma . ' - '. $turma->turno; ?></option>
+            <?php
+              endif;
+              endforeach;
+            endif;
           ?>
-        </select>
-    </div>
- 	<div class="form-group">
-		<label for="exampleInputEmail1">Selecione a data desejada:</label>
-		<tbody>
-	      <tr>
-	         <td class="col-md-2 text-center">
-	           <input type="date"  class="form-control" name="data_inicial" >
-	         </td>  
-				</tr>
-		</tbody>
-	</div>	
-		<input class="btn btn-primary btn-sm" name="acao" type="submit" value="Consultar">
+          </select>
+        </div>
+        <div class="row">
+   	      <div class="form-group">
+            <div class="col-md-12">
+          		<label for="exampleInputEmail1">Selecione a data desejada:</label>
+              <input type="date"  class="form-control" name="data_inicial" >
+            </div>  
+  	     </div>	
+        </div>
+        <div class="row margin-10">
+      		<div class="col-md-12">
+            <input class="btn btn-primary btn-sm" name="acao" type="submit" value="Consultar">
+            
+          </div>
+          
+        </div>
 	    </form>
     </div>
+    <div role="tabpanel" class="tab-pane <?= (isset($dados->acao) && $dados->acao == 'consultar') ? 'active' : ''; ?>" id="home">
+    fdfdfdf
+    </div>
+  </div>
 <?php Funcoes::geraFooter("frequencia"); ?>

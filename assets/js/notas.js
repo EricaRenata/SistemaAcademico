@@ -13,17 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
        }
     });
   }
-  if ("createEvent" in document) {
-    var evt = document.createEvent("HTMLEvents");
-    evt.initEvent("change", false, true);
-    element.dispatchEvent(evt);
-}
-else{
-  element.fireEvent("onchange");
-
-} 
-  document.getElementByName('cd_curso')[0].change();
-
 });
 
 function verificaValor(elemento) {
@@ -48,20 +37,21 @@ function setaStatusAluno(id, resultado, status) {
     status_aluno.classList.remove('status-aluno')
     status_aluno.classList.add('label');
     status_aluno.classList.add('label-success');
-    status_aluno.innerText = 'Aprovado';
+    console.log(status_aluno);
+    status_aluno.innerHTML = 'Aprovado';
     status.value = 1;
   } else if(resultado == 0 || resultado == 0.0) {
     status_aluno.classList.remove('label');
     status_aluno.classList.remove('label-danger');
     status_aluno.classList.remove('label-success');
-    status_aluno.innerText = ' - ';
+    status_aluno.innerHTML = ' - ';
     status.value = 0;
   } else {
     status_aluno.classList.remove('status-aluno')
     status_aluno.classList.remove('label-success')
     status_aluno.classList.add('label');
     status_aluno.classList.add('label-danger');
-    status_aluno.innerText = 'Reprovado';
+    status_aluno.innerHTML = 'Reprovado';
     status.value = 0;
   }
 }

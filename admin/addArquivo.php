@@ -43,7 +43,9 @@
 		if (isset($dados->acao) && $dados->acao == "Enviar Arquivo") { ?>
 	<?php 
 	 $rand =  $dados->cd_curso;
-    mkdir('../uploads/cursos/'.$rand);
+    if(!file_exists('../uploads/cursos/'.$rand)) {
+      mkdir('../uploads/cursos/'.$rand);
+    }
     $novaPasta = '../uploads/cursos/'.$rand.'/'.basename($_FILES['arquivo']['name']);
     if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $novaPasta)) :
 			$itens['cd_usuario']=$_SESSION['cd_usuario'];
@@ -54,7 +56,7 @@
 	?>
 			<div class="alert alert-success" role="alert">
 				<a href="#" class="alert-link glyphicon glyphicon-ok"></a>
-				Arquivo válido <?= $_FILES['arquivo']['name']; ?> enviado com sucesso!!
+				Arquivo <?= $_FILES['arquivo']['name']; ?> enviado com sucesso!!
 			</div>
   <?php else: ?>
   	Possível ataque de upload de arquivo!

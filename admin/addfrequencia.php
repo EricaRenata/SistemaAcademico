@@ -45,7 +45,7 @@
               $objetoTurma = new Turma();
                 $listaTurma = $objetoTurma->getTurmasPorCurso($cd_curso);
                 foreach ($listaTurma as $turma) :
-                  if($dados->cd_turma == $turma->cd_turma) :
+                  if(isset($dados->cd_turma) && $dados->cd_turma == $turma->cd_turma) :
             ?>
                     <option value="<?= $turma->cd_turma ?>" selected><?= $turma->cd_turma . ' - ' . $turma->turno; ?></option>
             <?php
