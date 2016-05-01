@@ -48,6 +48,7 @@ Class LoginUsuario extends Funcoes {
 		$_SESSION['cd_prof'] = (isset($dados->cd_prof)) ? $dados->cd_prof : false;
 		$_SESSION['nome'] = $dados->razao_social;
 		$_SESSION['super'] = (isset($dados->cd_admin)) ? $dados->cd_admin : false;
+		$_SESSION['foto'] = (isset($dados->foto) && $dados->foto != '') ? $dados->foto : false;
 		if(isset($dados->cd_admin) && $dados->cd_admin) {
 			$permissao = array(1,2,3);
 		} else if(isset($dados->cd_prof) && $dados->cd_prof) {

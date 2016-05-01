@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Maio-2016 às 09:56
+-- Generation Time: 01-Maio-2016 às 10:32
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `cadaluno` (
   `razao_social` varchar(125) NOT NULL,
   `matricula` bigint(45) NOT NULL,
   `cd_turma` bigint(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cadaluno`
@@ -66,7 +66,8 @@ INSERT INTO `cadaluno` (`cd_aluno`, `razao_social`, `matricula`, `cd_turma`) VAL
 (35, 'Silva Santos', 456, 35466),
 (36, 'Erinaldo', 2535, 35466),
 (37, 'JosÃ© Gomes', 6574, 35466),
-(38, 'zzz', 76668678, 43365);
+(38, 'zzz', 76668678, 43365),
+(39, 'zeuzeu', 9999, 43365);
 
 -- --------------------------------------------------------
 
@@ -258,12 +259,12 @@ INSERT INTO `cad_submodulo` (`cd_submodulo`, `nome_submodulo`, `fonte`, `permiss
 (4, 'Adiciona Aluno', 'addAluno.php', '1', 'glyphicon-user'),
 (5, 'Adiciona Submodulo', '', '1', 'glyphicon-cog'),
 (6, 'Adiciona Disciplina ', 'addDisciplina.php', '1,2', 'glyphicon-qrcode'),
-(7, 'Add Material', 'addArquivo.php', '1,2', 'glyphicon glyphicon-folder-open'),
-(8, 'Adiciona Frequencia', 'addfrequencia.php', '1,2', 'glyphicon-list-alt'),
+(7, 'Add Material', 'addArquivo.php', '2', 'glyphicon glyphicon-folder-open'),
+(8, 'Adiciona Frequencia', 'addfrequencia.php', '2', 'glyphicon-list-alt'),
 (9, 'Ver Frequencia', 'verFrequencia.php', '1,2,3', 'glyphicon glyphicon-list-alt'),
-(10, 'Ver Horário', 'verHorario.php', '1,2,3', 'glyphicon glyphicon-calendar'),
-(11, 'Ver Notas', 'verNotas.php', '1,2,3', 'glyphicon glyphicon-th'),
-(12, 'Ver Disciplina', 'verDisciplina.php', '1,2,3', 'glyphicon glyphicon-tasks'),
+(10, 'Ver Horário', 'verHorario.php', '2,3', 'glyphicon glyphicon-calendar'),
+(11, 'Ver Notas', 'verNotas.php', '2,3', 'glyphicon glyphicon-th'),
+(12, 'Ver Disciplina', 'verDisciplina.php', '2,3', 'glyphicon glyphicon-tasks'),
 (13, 'Mensagens', 'mensagens.php', '1,2,3', 'glyphicon glyphicon-envelope');
 
 -- --------------------------------------------------------
@@ -357,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `notificacoes` (
   `tp_notificacao` varchar(80) NOT NULL,
   `desc_notificacao` text NOT NULL,
   `dt_sistema` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `notificacoes`
@@ -386,7 +387,8 @@ INSERT INTO `notificacoes` (`cd_notificacao`, `cd_usuario`, `tp_notificacao`, `d
 (32, 3, 'Turma', 'Turma  adicionado por ', '2016-04-23 18:42:11'),
 (33, 3, 'Turma', 'Turma  adicionado por ', '2016-04-23 18:42:24'),
 (34, 3, 'Turma', 'Turma Banco de Dados adicionado por ', '2016-04-23 18:43:20'),
-(35, 3, 'Alunos', 'Aluno zzz adicionado por ', '2016-04-23 18:56:19');
+(35, 3, 'Alunos', 'Aluno zzz adicionado por ', '2016-04-23 18:56:19'),
+(36, 32, 'Alunos', 'Aluno zeuzeu adicionado por Eduardo', '2016-05-01 08:25:46');
 
 -- --------------------------------------------------------
 
@@ -400,23 +402,20 @@ CREATE TABLE IF NOT EXISTS `seg_usuario` (
   `cd_usuario` bigint(20) NOT NULL,
   `dt_sistema` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `cd_aluno` bigint(20) NOT NULL,
-  `cd_prof` bigint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+  `cd_prof` bigint(1) NOT NULL,
+  `foto` varchar(300) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `seg_usuario`
 --
 
-INSERT INTO `seg_usuario` (`login`, `senha`, `cd_usuario`, `dt_sistema`, `cd_aluno`, `cd_prof`) VALUES
-(3456, '123456', 1, '2016-03-12 15:22:45', 1, 0),
-(7897897, '789798', 2, '2016-04-16 15:56:52', 31, 0),
-(2147483647, '6786876876', 4, '2016-04-16 15:59:14', 33, 0),
-(123456, '123456', 5, '2016-04-17 19:48:13', 0, 1),
-(0, '789', 6, '2016-04-21 16:44:13', 34, 0),
-(0, '456', 7, '2016-04-21 16:45:35', 35, 0),
-(0, '123456', 8, '2016-04-21 17:36:32', 36, 0),
-(0, '6574', 9, '2016-04-21 17:58:51', 37, 0),
-(0, 'zzz', 10, '2016-04-23 18:56:18', 38, 0);
+INSERT INTO `seg_usuario` (`login`, `senha`, `cd_usuario`, `dt_sistema`, `cd_aluno`, `cd_prof`, `foto`) VALUES
+(3456, '123456', 1, '2016-03-12 15:22:45', 1, 0, ''),
+(7897897, '789798', 2, '2016-04-16 15:56:52', 31, 0, ''),
+(2147483647, '6786876876', 4, '2016-04-16 15:59:14', 33, 0, ''),
+(123456, '123456', 5, '2016-04-17 19:48:13', 0, 1, ''),
+(0, '123456', 11, '2016-05-01 08:25:46', 39, 0, 'amor.jpg');
 
 --
 -- Indexes for dumped tables
@@ -531,7 +530,7 @@ ALTER TABLE `arquivos`
 -- AUTO_INCREMENT for table `cadaluno`
 --
 ALTER TABLE `cadaluno`
-  MODIFY `cd_aluno` bigint(45) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
+  MODIFY `cd_aluno` bigint(45) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `cad_admin`
 --
@@ -596,12 +595,12 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT for table `notificacoes`
 --
 ALTER TABLE `notificacoes`
-  MODIFY `cd_notificacao` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+  MODIFY `cd_notificacao` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `seg_usuario`
 --
 ALTER TABLE `seg_usuario`
-  MODIFY `cd_usuario` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `cd_usuario` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

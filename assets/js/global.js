@@ -99,16 +99,28 @@ function serializeObject(obj) {
 }
 
 function callAjax(data, callback) {
-    var dados = (data.data != '' && data.data != undefined) ? data.data : null;
-    var ajax = $.ajax({
-      type : 'POST',
-      url : baseUrl + data.url,
-      dataType : data.tipo,
-      data: dados,
-      cache: false,
-      success: function(data) {
-        callback(data);
-      }
-    });
-    return ajax;
+  var dados = (data.data != '' && data.data != undefined) ? data.data : null;
+  var ajax = $.ajax({
+    type : 'POST',
+    url : baseUrl + data.url,
+    dataType : data.tipo,
+    data: dados,
+    cache: false,
+    success: function(data) {
+      callback(data);
+    }
+  });
+  return ajax;
+}
+
+function previewUpload(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $(input).next().attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
   }
+}

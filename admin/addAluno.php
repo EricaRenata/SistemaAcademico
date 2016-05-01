@@ -12,13 +12,18 @@
     $itens['cd_turma']     = (isset($dados->cd_turma)) ? (Int)$dados->cd_turma : null;
     $itens['usuario']   = (isset($dados->usuario)) ? $dados->usuario : null;
     $itens['senha']     = (isset($dados->senha)) ? $dados->senha : null;
-    $objetoAluno->gravaAluno($itens);
+    $itens['foto']     = $_FILES['arquivo']['name'];
+    $novaPasta = '../uploads/alunos/'.basename($_FILES['arquivo']['name']);
+    if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $novaPasta)) {
+      $objetoAluno->gravaAluno($itens);
+    }
+
   }
 ?>
-  <form action="addAluno.php" method="post">
+  <form action="addAluno.php" method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md-3">
-        <input type="file" id="foto" style="display: none;" />
+        <input type="file" id="foto" name="arquivo" style="display: none;" onchange="previewUpload(this)"/>
         <img src="../assets/imagens/img.svg" alt="" id="foto-aluno" class="img-thumbnail">
       </div>
       <div class="col-md-4">

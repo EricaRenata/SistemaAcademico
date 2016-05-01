@@ -23,7 +23,7 @@
   <form action="addNoticias.php" method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md-3">
-        <input type="file" id="noticia" name="arquivo" style="display: none;" />
+        <input type="file" id="noticia" name="arquivo" style="display: none;" onchange="previewUpload(this)" />
         <img src="../assets/imagens/img.svg" alt="" class="img-thumbnail foto-noticia">
       </div>
       <div class="col-md-4">
