@@ -22,20 +22,20 @@ Class LoginUsuario extends Funcoes {
 
 	public function verificaAluno($matricula, $senha) {
 		$objetoSql = new Database();
-		$getlogin = $objetoSql->query("select * from seg_usuario inner join cadaluno using(cd_aluno) where login = {$matricula}	AND senha = {$senha}")->result();
+		$getlogin = $objetoSql->query("select * from seg_usuario inner join cadaluno using(cd_aluno) where login = '$matricula'	AND senha = {$senha}")->result();
 		return (count($getlogin) > 0 ) ? $getlogin[0] : false;
 	}
 
 
 	public function verificaAdministrador($matricula, $senha) {
 		$objetoSql1 = new Database();
-		$getlogin = $objetoSql1->query("select * from cad_admin where login = '".$matricula."' AND senha = {$senha}")->result();
+		$getlogin = $objetoSql1->query("select * from cad_admin where login = '$matricula' AND senha = {$senha}")->result();
 		return (count($getlogin) > 0 ) ? $getlogin[0] : false;
 	}
 
 	public function verificaProfissional($matricula, $senha) {
 		$objetoSql = new Database();
-		$getlogin = $objetoSql->query("select * from seg_usuario inner join cad_prof using(cd_usuario) where login = {$matricula}	AND senha = {$senha}")->result();
+		$getlogin = $objetoSql->query("select * from seg_usuario inner join cad_prof using(cd_usuario) where login = '$matricula'	AND senha = {$senha}")->result();
 		return (count($getlogin) > 0 ) ? $getlogin[0] : false;
 	}
 

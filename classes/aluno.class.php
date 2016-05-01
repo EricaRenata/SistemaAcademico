@@ -18,7 +18,7 @@ class Aluno extends Funcoes {
     	'login' => $itens['usuario'],
     	'senha' => $itens['senha'],
       'cd_aluno' => (Int)$cd_aluno->last_id,
-    	'foto' => $itens['foto']
+    	'foto' => (!empty($itens['foto'])) ? $itens['foto'] : ''
   	);
     $objetoSql2->insert('seg_usuario', $usuario);
     $notificacao = array(

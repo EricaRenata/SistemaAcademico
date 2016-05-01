@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Maio-2016 às 10:32
+-- Generation Time: 01-Maio-2016 às 11:01
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -52,22 +52,32 @@ INSERT INTO `arquivos` (`cd_arquivo`, `nome`, `cd_usuario`, `dt_sistema`, `cd_cu
 CREATE TABLE IF NOT EXISTS `cadaluno` (
   `cd_aluno` bigint(45) NOT NULL,
   `razao_social` varchar(125) NOT NULL,
-  `matricula` bigint(45) NOT NULL,
+  `matricula` varchar(45) NOT NULL,
   `cd_turma` bigint(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cadaluno`
 --
 
 INSERT INTO `cadaluno` (`cd_aluno`, `razao_social`, `matricula`, `cd_turma`) VALUES
-(1, 'Eliseu dos Santos', 123, 35466),
-(34, 'Erick Santos', 789, 35466),
-(35, 'Silva Santos', 456, 35466),
-(36, 'Erinaldo', 2535, 35466),
-(37, 'JosÃ© Gomes', 6574, 35466),
-(38, 'zzz', 76668678, 43365),
-(39, 'zeuzeu', 9999, 43365);
+(1, 'Eliseu dos Santos', '123', 35466),
+(34, 'Erick Santos', '789', 35466),
+(35, 'Silva Santos', '456', 35466),
+(36, 'Erinaldo', '2535', 35466),
+(37, 'JosÃ© Gomes', '6574', 35466),
+(38, 'zzz', '76668678', 43365),
+(39, 'zeuzeu', '9999', 43365),
+(40, 'hjkuyui', '890', 43365),
+(41, 'hjkuyui', '890', 43365),
+(42, 'hjkuyui', '890', 43365),
+(43, 'hjkuyui', '890', 43365),
+(44, 'hjkuyui', '890', 43365),
+(45, 'hjkuyui', '890', 43365),
+(46, 'hjkuyui', '890', 43365),
+(47, 'hjkuyui', '890', 43365),
+(48, 'hjkuyui', '4', 43365),
+(50, 'eliseu', 'b587d8', 43365);
 
 -- --------------------------------------------------------
 
@@ -358,7 +368,7 @@ CREATE TABLE IF NOT EXISTS `notificacoes` (
   `tp_notificacao` varchar(80) NOT NULL,
   `desc_notificacao` text NOT NULL,
   `dt_sistema` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `notificacoes`
@@ -388,7 +398,18 @@ INSERT INTO `notificacoes` (`cd_notificacao`, `cd_usuario`, `tp_notificacao`, `d
 (33, 3, 'Turma', 'Turma  adicionado por ', '2016-04-23 18:42:24'),
 (34, 3, 'Turma', 'Turma Banco de Dados adicionado por ', '2016-04-23 18:43:20'),
 (35, 3, 'Alunos', 'Aluno zzz adicionado por ', '2016-04-23 18:56:19'),
-(36, 32, 'Alunos', 'Aluno zeuzeu adicionado por Eduardo', '2016-05-01 08:25:46');
+(36, 32, 'Alunos', 'Aluno zeuzeu adicionado por Eduardo', '2016-05-01 08:25:46'),
+(37, 32, 'Alunos', 'Aluno hjkuyui adicionado por Eduardo', '2016-05-01 08:45:24'),
+(38, 32, 'Alunos', 'Aluno hjkuyui adicionado por Eduardo', '2016-05-01 08:49:52'),
+(39, 32, 'Alunos', 'Aluno hjkuyui adicionado por Eduardo', '2016-05-01 08:51:04'),
+(40, 32, 'Alunos', 'Aluno hjkuyui adicionado por Eduardo', '2016-05-01 08:51:08'),
+(41, 32, 'Alunos', 'Aluno hjkuyui adicionado por Eduardo', '2016-05-01 08:51:53'),
+(42, 32, 'Alunos', 'Aluno hjkuyui adicionado por Eduardo', '2016-05-01 08:51:56'),
+(43, 32, 'Alunos', 'Aluno hjkuyui adicionado por Eduardo', '2016-05-01 08:52:01'),
+(44, 32, 'Alunos', 'Aluno hjkuyui adicionado por Eduardo', '2016-05-01 08:52:20'),
+(45, 32, 'Alunos', 'Aluno hjkuyui adicionado por Eduardo', '2016-05-01 08:53:06'),
+(46, 32, 'Alunos', 'Aluno eliseu adicionado por Eduardo', '2016-05-01 08:54:25'),
+(47, 32, 'Alunos', 'Aluno eliseu adicionado por Eduardo', '2016-05-01 09:00:44');
 
 -- --------------------------------------------------------
 
@@ -397,25 +418,26 @@ INSERT INTO `notificacoes` (`cd_notificacao`, `cd_usuario`, `tp_notificacao`, `d
 --
 
 CREATE TABLE IF NOT EXISTS `seg_usuario` (
-  `login` int(10) NOT NULL,
+  `login` varchar(80) NOT NULL,
   `senha` varchar(50) NOT NULL,
   `cd_usuario` bigint(20) NOT NULL,
   `dt_sistema` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `cd_aluno` bigint(20) NOT NULL,
   `cd_prof` bigint(1) NOT NULL,
   `foto` varchar(300) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `seg_usuario`
 --
 
 INSERT INTO `seg_usuario` (`login`, `senha`, `cd_usuario`, `dt_sistema`, `cd_aluno`, `cd_prof`, `foto`) VALUES
-(3456, '123456', 1, '2016-03-12 15:22:45', 1, 0, ''),
-(7897897, '789798', 2, '2016-04-16 15:56:52', 31, 0, ''),
-(2147483647, '6786876876', 4, '2016-04-16 15:59:14', 33, 0, ''),
-(123456, '123456', 5, '2016-04-17 19:48:13', 0, 1, ''),
-(0, '123456', 11, '2016-05-01 08:25:46', 39, 0, 'amor.jpg');
+('3456', '123456', 1, '2016-03-12 15:22:45', 1, 0, ''),
+('7897897', '789798', 2, '2016-04-16 15:56:52', 31, 0, ''),
+('2147483647', '6786876876', 4, '2016-04-16 15:59:14', 33, 0, ''),
+('123456', '123456', 5, '2016-04-17 19:48:13', 0, 1, ''),
+('eliseu', '123456', 21, '2016-05-01 08:54:25', 49, 0, ''),
+('eliseu', '123456', 22, '2016-05-01 09:00:44', 50, 0, '');
 
 --
 -- Indexes for dumped tables
@@ -530,7 +552,7 @@ ALTER TABLE `arquivos`
 -- AUTO_INCREMENT for table `cadaluno`
 --
 ALTER TABLE `cadaluno`
-  MODIFY `cd_aluno` bigint(45) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
+  MODIFY `cd_aluno` bigint(45) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `cad_admin`
 --
@@ -595,12 +617,12 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT for table `notificacoes`
 --
 ALTER TABLE `notificacoes`
-  MODIFY `cd_notificacao` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
+  MODIFY `cd_notificacao` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `seg_usuario`
 --
 ALTER TABLE `seg_usuario`
-  MODIFY `cd_usuario` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `cd_usuario` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

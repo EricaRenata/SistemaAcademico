@@ -8,14 +8,18 @@
 
   if(count($_POST) && $dados->acao == "Salvar") {
     $objetoAluno = new Aluno();
-    $itens['matricula'] = (isset($dados->matricula)) ? (Int)$dados->matricula : null;
+    $itens['matricula'] = substr(md5(uniqid($_SESSION['login'], true)), 0, 6);
     $itens['cd_turma']     = (isset($dados->cd_turma)) ? (Int)$dados->cd_turma : null;
     $itens['usuario']   = (isset($dados->usuario)) ? $dados->usuario : null;
     $itens['senha']     = (isset($dados->senha)) ? $dados->senha : null;
     $itens['foto']     = $_FILES['arquivo']['name'];
     $novaPasta = '../uploads/alunos/'.basename($_FILES['arquivo']['name']);
-    if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $novaPasta)) {
-      $objetoAluno->gravaAluno($itens);
+    if(!empty($itens['foto'])) {
+      if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $novaPasta)) {
+        $objetoAluno->gravaAluno($itens);
+      }
+    } else {
+        $objetoAluno->gravaAluno($itens);
     }
 
   }
@@ -29,7 +33,7 @@
       <div class="col-md-4">
         <div class="form-group has-success">
           <label class="control-label" for="inputSuccess1">Matricula</label>
-          <input type="text" class="form-control" id="inputSuccess1" value="" name="matricula" aria-describedby="helpBlock2">
+          <input type="text" class="form-control" value="<?= substr(md5(uniqid($_SESSION['login'], true)), 0, 6); ?>" id="inputSuccess1" readonly name="matricula" aria-describedby="helpBlock2">
         </div>
       </div>
       <div class="col-md-5">

@@ -1,16 +1,17 @@
 <?php
   session_start();
-
-  error_reporting(E_ALL);
-  ini_set('display_errors', 1);
-
   include 'classes/funcoes.class.php';
   include_once 'classes/login.class.php';
-?> 
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Login - SGA</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta name="description" content="">
+  <meta name="author" content="">
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/login.css">
 </head>
@@ -45,7 +46,7 @@
       </div>
     </div>
   </div>
-  <?php 
+  <?php
     $post = (Object) $_POST;
     if (count($_POST)) {
       $matricula = $post->matricula;
