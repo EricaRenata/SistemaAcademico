@@ -1,7 +1,5 @@
 <?php
   include '../classes/funcoes.class.php';
-  include '../classes/curso.class.php';
-  include '../classes/disciplina.class.php';
   Funcoes::geraHeader();
   Funcoes::geraMenus();
 ?>

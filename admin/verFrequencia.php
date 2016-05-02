@@ -1,8 +1,9 @@
-<?php 
-  include '../classes/funcoes.class.php';  
-  include '../classes/curso.class.php'; 
-  include '../classes/disciplina.class.php'; 
-  include '../classes/turma.class.php'; 
+<?php
+  include '../classes/funcoes.class.php';
+  include '../classes/curso.class.php';
+  include '../classes/disciplina.class.php';
+  include '../classes/turma.class.php';
+  include '../classes/frequencia.class.php';
   Funcoes::geraHeader();
   Funcoes::geraMenus();
   $dados = (Object) $_POST;
@@ -25,13 +26,13 @@
                   if($dados->cd_curso == $curso->cd_curso) :
             ?>
                     <option value="<?= $curso->cd_curso ?>" selected><?= $curso->nome_curso; ?></option>
-            <?php 
+            <?php
                   else :
             ?>
                   <option value="<?= $curso->cd_curso ?>"><?= $curso->nome_curso; ?></option>
-            <?php 
-                  endif; 
-                endforeach; 
+            <?php
+                  endif;
+                endforeach;
             ?>
 					</select>
 		  	</div>
@@ -62,20 +63,42 @@
             <div class="col-md-12">
           		<label for="exampleInputEmail1">Selecione a data desejada:</label>
               <input type="date"  class="form-control" name="data_inicial" >
-            </div>  
-  	     </div>	
+            </div>
+  	     </div>
         </div>
         <div class="row margin-10">
       		<div class="col-md-12">
             <input class="btn btn-primary btn-sm" name="acao" type="submit" value="Consultar">
-            
+
           </div>
-          
+
         </div>
 	    </form>
     </div>
-    <div role="tabpanel" class="tab-pane <?= (isset($dados->acao) && $dados->acao == 'consultar') ? 'active' : ''; ?>" id="home">
-    fdfdfdf
+    <div role="tabpanel" class="tab-pane <?= (isset($dados->acao) && $dados->acao == 'Consultar') ? 'active' : ''; ?>" id="home">
+      <?php
+        $data = date("d/m/Y");
+        $objetoFrequencia = new Frequencia();
+        $frequencia = $objetoFrequencia->getFrequenciaPorAluno($_SESSION['cd_aluno']);
+      ?>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="text-center">Disciplina</th>
+            <th class="text-center">Data</th>
+            <th class="text-center">Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <?php foreach ($frequencia as $frequencias) : ?>
+              <tr class="<?= ($aluno->presenca == 1) ? 'success' : ''; ?>">
+                <td class="text-center"><?= $frequencias->nome_disciplina; ?></td>
+                <td class="text-center"><?= date('d/m/Y', strtotime($frequencias->data)); ?></td>
+                <td class="text-center"><?= ($frequencias->presenca == 1) ? 'Presente' : 'Ausente'; ?></td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+      </table>
     </div>
   </div>
 <?php Funcoes::geraFooter("frequencia"); ?>
