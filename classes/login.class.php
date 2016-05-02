@@ -44,6 +44,7 @@ Class LoginUsuario extends Funcoes {
 		$_SESSION['login'] = $dados->login;
 		$_SESSION['logado'] = true;
 		$_SESSION['aluno'] = (!isset($dados->cd_admin) && (!isset($dados->cd_prof) || $dados->cd_prof == 0)) ? true : false;
+		$_SESSION['cd_aluno'] = (isset($dados->cd_aluno)) ? $dados->cd_aluno : false;
 		$_SESSION['cd_usuario'] = $dados->cd_usuario;
 		$_SESSION['cd_prof'] = (isset($dados->cd_prof)) ? $dados->cd_prof : false;
 		$_SESSION['nome'] = $dados->razao_social;
