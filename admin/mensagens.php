@@ -7,6 +7,9 @@
 ?>
 <div class="row">
   <div class="col-sm-12 col-md-12">
+    <button type="button" class="btn btn-default" data-toggle="tooltip" title="Nova Mensagem">
+      <span class="glyphicon glyphicon-refresh"></span> Nova Mensagem  
+    </button>
     <button type="button" class="btn btn-default" data-toggle="tooltip" title="Atualizar">
       <span class="glyphicon glyphicon-refresh"></span>   
     </button>

@@ -14,7 +14,7 @@
     </a>
     <ul class="dropdown-menu dropdown-messages">
       <li>
-        <a href="#">
+        <a href="mensagens.php">
           <div>
               <strong>Erica Gomes</strong>
               <span class="pull-right text-muted">
